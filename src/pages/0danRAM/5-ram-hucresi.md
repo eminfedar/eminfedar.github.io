@@ -36,7 +36,7 @@ bir RAM tasarlayacaktık.
 > Yani 64 bit işlemciye sahip bir bilgisayarınız varsa 17 Milyar GB RAM’e kadar yükseltme yapabilirsiniz (tabi gerçek hayatta adres tutmak için 64 bitin hepsi ayrılmaz :))
 ## RAM Çipimizin Genel Tasarımı
 
-![RAM Çipimizin Genel Tasarımı.](https://www.dropbox.com/s/utrae2rfnc5ou72/ram-component.png?raw=1)
+![RAM Çipimizin Genel Tasarımı.](https://eminfedar.com/static/ram/ram-component.png)
 
 *RAM Çipimizin Genel Tasarımı.*
 
@@ -59,7 +59,7 @@ Normal şartlarda iki şekilde bir çipi başka bir çip ile haberleştirebilirs
 
 *(Örneğin SSD’den veri okuyacağım, o zaman SSD’yi aktif edip diğerlerini pasif halde tutarım. Veya RAM’den veri okumak istiyorum, diğerlerini pasif hale getirip bu sefer de sadece RAM’i aktif ederim)*
 
-![Ortak veri yolu kullanan çiplerin Chip Select girişi kullanılarak veri yoluna bağlanması.](https://www.dropbox.com/s/swhn2qhjk1o8zn2/ortak-veri-yolu.gif?raw=1)
+![Ortak veri yolu kullanan çiplerin Chip Select girişi kullanılarak veri yoluna bağlanması.](https://eminfedar.com/static/ram/ortak-veri-yolu.gif)
 <br>*Ortak veri yolu kullanan çiplerin Chip Select girişi kullanılarak veri yoluna bağlanması.*
 
 ## Gelelim artık RAM Hücresine!
@@ -74,7 +74,7 @@ Milyarları saklayabilen 1 biti saklayabilendir.
 
 Yani önce **tek bir biti saklayabilen** bir **“RAM Hücresi”** yapıp sonra bunu istediğimiz sayıda kopyalarak istediğimiz boyutta RAM elde edeceğiz.
 
-![Ramimize 1 bitlik veri saklama işini gerçekleştirecek temel RAM Hücresi. İç planı ve dışarıya soyutlanmış halleri.](https://www.dropbox.com/s/5pwhabr4en7ky7n/ram-hucresi.gif?raw=1)
+![Ramimize 1 bitlik veri saklama işini gerçekleştirecek temel RAM Hücresi. İç planı ve dışarıya soyutlanmış halleri.](https://eminfedar.com/static/ram/ram-hucresi.gif)
 <br> *Ramimize 1 bitlik veri saklama işini gerçekleştirecek temel RAM Hücresi. İç planı ve dışarıya soyutlanmış halleri.*
 
 Hücremizin içinde kullandığımız devrede ilginç bir eleman görebilirsiniz. *(D Q ve CLK yazan)*
@@ -91,7 +91,7 @@ Merak etmeyin, baştaki mandalımıza **2 VE** ve **1 Değil** kapısı ekleyere
 
 Logisim programında tasarladığım çalışan bir D-Tipi F/F’nin görüntüsü şu şekilde: *(yani RAM hücremizin içindeki D Q ve CLK yazan devre elemanının içi)*
 
-![D-Tipi F/F iç devresi](https://www.dropbox.com/s/70fgg3yqmsil1vd/mandal-logisim.png?raw=1) <br>
+![D-Tipi F/F iç devresi](https://eminfedar.com/static/ram/mandal-logisim.png) <br>
 [Logisim programında çalışan bir D tipi F/F devre dosyası](https://shorturl.at/kyDOY)
 > Kırmızı çizgi ile ayırdığım kısmın sağında kalan parçalar ilk dersimizdeki **Ve-Veya** mandalı. Ek olarak sadece soldaki **2 tane VE, 1 tane Değil** kapılarını ekledik.
 

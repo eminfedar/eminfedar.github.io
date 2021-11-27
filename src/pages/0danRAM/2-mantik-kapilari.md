@@ -91,7 +91,7 @@ Elektronikte
 “VE kapısı” dediğimiz şey Mantıktaki **Ve (Λ)**’nin,
 “VEYA” kapısı da **Veya (V)**’nın karşılığıdır.
 
-![Mantık kapılarının tümü](https://www.dropbox.com/s/fw0zw61p3emxcgz/mantik-kapilari-hepsi.gif?raw=1)
+![Mantık kapılarının tümü](https://eminfedar.com/static/ram/mantik-kapilari-hepsi.gif)
 
 Çalışma şekilleri yukarıdaki gibi verilmiş kapıların matematiksel olarak da karşılıklarını bilmek isteriz. Çünkü her zaman ezbere iş yapamayız veya ilgilenen ifade git gide karmaşıklaşıp büyüyebilir.
 
@@ -101,7 +101,7 @@ Bu yüzden **Doğruluk Tablolarını** kullanırız. Doğruluk tabloları bir **
 
 Mesela A ve B girişlerimiz olsun, bunlardan **sadece bir tanesi** 1 olduğu zaman doğru olan sonuçla Doğruluk Tablosunu çizelim:
 
-![XOR Doğruluk Tablosu](https://www.dropbox.com/s/vcrtgrhu3vxm6xw/xor-tablo.png?raw=1)
+![XOR Doğruluk Tablosu](https://eminfedar.com/static/ram/xor-tablo.png)
 
 Bu gördüğümüz tablo aslında **Özel VEYA**(XOR veya EXOR) kapısının doğruluk tablosudur.
 
@@ -113,7 +113,7 @@ Bu yüzden bir olayı **doğruluk tablosuna** dökebilmek, onu elektronik ortama
 
 Mesela yine A ve B girişlerimiz olsun, fakat şimdi sadece A da B de 1 olduğu zaman sonuç doğru olsun:
 
-![AND Doğruluk Tablosu](https://www.dropbox.com/s/dh2g9txt2e7uozq/and-tablo.png?raw=1)
+![AND Doğruluk Tablosu](https://eminfedar.com/static/ram/and-tablo.png)
 
 Bu gördüğümüz tablo da aslında **VE** (AND) kapısının doğruluk tablosudur.
 
@@ -123,7 +123,7 @@ Doğruluk Tabloları küçük boyutlarda işimize yarıyor, fakat örneğin elim
 
 **Böyle durumlarda Karnaugh Haritaları kullanırız.** Karnaugh Haritaları doğruluk tablosunun iki boyutlu düzleme dökülmüş halidir. Yani durumlar tek bir sütun kaplamak yerine satır ve sütunlara dağıtılırlar.
 
-![4 Duruma sahip basit bir karnaugh haritası. (Boş alanlar 0)](https://www.dropbox.com/s/dqvi8s3nos0uovj/karna-ornek.png?raw=1)<br>
+![4 Duruma sahip basit bir karnaugh haritası. (Boş alanlar 0)](https://eminfedar.com/static/ram/karna-ornek.png)<br>
 *4 Duruma sahip basit bir karnaugh haritası. (Boş alanlar 0)*
 
 Karnaugh Haritalarının bir diğer bir avantajı ise işlemi sadeleştirmenin çok kolay yapılabilmesidir.

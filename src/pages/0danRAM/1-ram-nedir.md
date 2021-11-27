@@ -20,7 +20,7 @@ description: Sıfırdan RAM tasarladığımız bir seri.
 
 İstediğimiz (yani herhangi bir, yani rastgele), hafıza bölümüne **tek seferde** erişebildiğimiz için böyle tesmiye edilmiş.
 
-![Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]](https://www.dropbox.com/s/b64lm60uwk9ru71/rastgele-vs-sirali.gif?raw=1)
+![Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]](https://eminfedar.com/static/ram/rastgele-vs-sirali.gif)
 <br> *Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]*
 
 ### Ram Ne İşe Yarar?
@@ -43,7 +43,7 @@ Mesela “veri saklama” dediğimiz işini gerçekleştirebilen en basit devrel
 
 Bu ismin verilme sebebi sadece 1 VE ve 1 VEYA kapısıyla oluşturulabilmesidir. *(bir tane de DEĞİL kapısı var aşağıda tabiki :))*
 
-![1 bit veri saklayabilen AND-OR-Latche çalışma şekli](https://www.dropbox.com/s/0jmipuj67855uzz/ve-veya-mandali.gif?raw=1)*1 bit veri saklayabilen AND-OR-Latche çalışma şekli*
+![1 bit veri saklayabilen AND-OR-Latche çalışma şekli](https://eminfedar.com/static/ram/ve-veya-mandali.gif)*1 bit veri saklayabilen AND-OR-Latche çalışma şekli*
 
 Bu devreyi Mantık Devreleri (veya Elektrik Devreleri) tasarlama programları aracılığıyla kendiniz de tasarlayıp simüle edebilirsiniz. Ayrıca ilerideki tasarımlarımızı da kendi bilgisayarınızda gerçeklemek için bu programlara ihtiyacınız olacak.
 
