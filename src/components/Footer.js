@@ -1,15 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
+import SocialLogos from './SocialLogos'
 
 const Footer = () =>
     <footer className="site-footer outer">
         <div className="site-footer-content inner">
             <section className="copyright">
-                <Link to="/">eminfedar.com</Link> | 2020
+                <Link to="/">eminfedar.com</Link> | Emin Fedar Kişisel Bloğu
             </section>
-            <a href="https://github.com/Harrison1/unrealcpp">Gatsby theme: unrealcpp</a>
+            <nav>
+                <SocialLogos />
+            </nav>
         </div>
     </footer>
 
-export default Footer;
-
+export default Footer

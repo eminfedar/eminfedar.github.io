@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import HomeNav from './HomeNav'
 
 const Header = ({ image, title, tagline }) => 
@@ -13,6 +12,7 @@ const Header = ({ image, title, tagline }) =>
                     { tagline }
                 </h2>
             </div>
+            <HomeNav />
         </div>
     </header>
 

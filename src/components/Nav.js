@@ -1,8 +1,8 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import { FaTwitter, FaGithub } from 'react-icons/fa';
+import { Link } from 'gatsby'
+import SocialLogos from './SocialLogos'
 
-const Nav = ({ isHome }) =>
+const Nav = () => 
     <nav className="site-nav">
         <div className="site-nav-left">
             <a className="site-nav-logo" href="/">Emin Fedar</a>
@@ -13,11 +13,6 @@ const Nav = ({ isHome }) =>
                     </Link>
                 </li>
                 <li role="menuitem">
-                    <Link to="/about">
-                        Hakkımda
-                    </Link>
-                </li>
-                <li role="menuitem">
                     <Link to="/tags">
                         Kategoriler
                     </Link>
@@ -25,12 +20,7 @@ const Nav = ({ isHome }) =>
             </ul>
         </div>
         <div className="site-nav-right">
-            <a className="social-logo" style={{color:'#FFFFFF'}} href="https://twitter.com/eminfedar" >
-                <FaTwitter />
-            </a>
-            <a className="social-logo" style={{color:'#FFFFFF'}} href="https://github.com/eminfedar" >
-                <FaGithub />
-            </a>
+            <SocialLogos />
         </div>
     </nav>
 

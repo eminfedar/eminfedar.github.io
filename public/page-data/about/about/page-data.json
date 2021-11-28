@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/about/about/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Emin Fedar"}},"markdownRemark":{"id":"dfb7bec0-d14d-5ba1-8a2a-31f3e30375d9","excerpt":"Normal bir insanım.","html":"<p>Normal bir insanım.</p>","frontmatter":{"title":"Ben kimim?","date":"Mart 01, 2019","description":"Ben kimim?","image":"/static/genel/wallpaper.jpg","tags":["Genel"]}},"previous":null,"next":{"fields":{"slug":"/blog/bismillah/"},"frontmatter":{"title":"Bismillah"}}},"pageContext":{"id":"dfb7bec0-d14d-5ba1-8a2a-31f3e30375d9","previousPostId":null,"nextPostId":"56b23994-3b4e-53cd-be7f-d8e1df1994a7"}},
+    "staticQueryHashes": []}

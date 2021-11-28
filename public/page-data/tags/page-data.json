@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-tags-js",
+    "path": "/tags/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Emin Fedar"}},"allMarkdownRemark":{"group":[{"fieldValue":"Atomic","totalCount":2},{"fieldValue":"C++","totalCount":6},{"fieldValue":"C++11","totalCount":5},{"fieldValue":"Channels","totalCount":1},{"fieldValue":"Genel","totalCount":2},{"fieldValue":"Linux","totalCount":1},{"fieldValue":"Multithreaded","totalCount":3},{"fieldValue":"Mutex","totalCount":2},{"fieldValue":"Plymouth","totalCount":1},{"fieldValue":"RAM","totalCount":6},{"fieldValue":"RISCV","totalCount":7},{"fieldValue":"Rust","totalCount":1},{"fieldValue":"Sıfırdan İşlemci","totalCount":6}]}},"pageContext":{}},
+    "staticQueryHashes": []}

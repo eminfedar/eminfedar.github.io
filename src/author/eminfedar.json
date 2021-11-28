@@ -1,11 +1,11 @@
 {
     "name": "Emin Fedar",
-    "cardimage": "https://www.dropbox.com/s/pmx2qu159z88anu/onepunchman_saydam.png?raw=1",
+    "cardimage": "/icons/icon-512x512.png",
     "email": "eminfedar@gmail.com",
     "website": "https://eminfedar.com/",
     "company": "TÜBİTAK",
     "github": "eminfedar",
     "twitter": "eminfedar",
-    "shortbio": "Pardus, Linux, C++, Gtk, Qt, Python | {5:44}",
-    "backgroundImage": "https://wallpapercave.com/wp/d5ZOsEJ.jpg"
+    "shortbio": "C++, Rust, Linux, RISC-V | {5:44}",
+    "backgroundImage": "/static/genel/wallpaper.jpg"
 }

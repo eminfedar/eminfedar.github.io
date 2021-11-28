@@ -1,33 +1,32 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import '../css/prism-okaidia.css'
-// import '../css/global.css'
-import '../css/screen.css'
-import eficon from '../favicons/ef.png'
 
 const TemplateWrapper = ({ children }) => (
   <div>
+    <Helmet>
+      <title>Emin Fedar</title>
+      <meta
+        name="description"
+        content="Emin Fedar Kişisel Blog sitesidir. C++, Rust, Pardus GNU/Linux, İşlemci Tasarımı"
+      />
+      <meta
+        name="keywords"
+        content="emin, fedar, emin fedar, c++, cpp, development, rust, async, await, c++11, auto, constexpr"
+      />
+      <meta charSet="utf-8" />
+      <meta name="theme-color" content="#663399" />
+      <link rel="canonical" href="https://eminfedar.com" />
+    </Helmet>
     <Helmet
-      title="Emin Fedar"
-      meta={[
-        { name: 'description', content: 'Emin Fedar kişisel blog sitesidir.' },
-        { name: 'keywords', content: 'emin, fedar, emin fedar, c++, cpp, python, linux, pardus, algoritma' },
-        { charSet: 'utf-8'},
-        { name: 'theme-color', content: '#111111'}
-      ]}
-      link={[
-        { rel: 'icon', type: "image/png", sizes: "460x460", href: eficon },
-        { rel: 'canonical', href: 'https://eminfedar.com' }
+      script={[
+        {
+          type: 'text/javascript',
+          innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-FNY55777ZG');`,
+        },
       ]}
     />
-
-    <div>{children()}</div>
+    <div>{children}</div>
   </div>
-);
+)
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-};
-
-export default TemplateWrapper;
+export default TemplateWrapper

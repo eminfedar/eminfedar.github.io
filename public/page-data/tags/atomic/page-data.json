@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-js",
+    "path": "/tags/atomic/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/rust/rust-multithreaded-channels-atomic-mutex/"},"frontmatter":{"date":"12 November, 2021","title":"Rust Multithreaded Geliştirme","description":"Channels, Atomic ve Mutex örnekleri","image":"/static/rust/kapak-multithreaded-gelistirme.jpg","tags":["Rust","Multithreaded","Atomic","Mutex","Channels"]}}},{"node":{"fields":{"slug":"/cpp/cpp-multithreaded-atomic-mutex/"},"frontmatter":{"date":"12 November, 2021","title":"C++'ta Multithreaded Geliştirme","description":"Atomic ve Mutex örnekleri","image":"/static/cpp/kapak-multithreaded-gelistirme.jpg","tags":["C++","Multithreaded","Atomic","Mutex"]}}}]}},"pageContext":{"tag":"Atomic"}},
+    "staticQueryHashes": []}
