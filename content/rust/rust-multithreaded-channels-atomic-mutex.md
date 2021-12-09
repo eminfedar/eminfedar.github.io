@@ -2,7 +2,7 @@
 templateKey: blog-post
 path: /rust-multithreaded-gelistirme-channels-atomic-mutex
 title: Rust Multithreaded Geliştirme
-image: /static/rust/kapak-multithreaded-gelistirme.jpg
+image: /static/rust/kapak-multithreaded-gelistirme.png
 tags: ["Rust", "Multithreaded", "Atomic", "Mutex", "Channels"]
 date: 2021-11-12T13:00:03.066Z
 description: Channels, Atomic ve Mutex örnekleri
