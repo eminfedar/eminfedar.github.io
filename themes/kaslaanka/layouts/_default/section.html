@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ partial "header" . }}
+
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				<div class="markdown">
+					{{ partial "content" . }}
+				</div>
+
+				<div class="mx-0 mx-md-4 posts">
+					<ul class="archive-posts">
+						{{ range sort .Pages "Date" "desc" }}
+						<li style="margin-top: 5pt;">
+							<a href="{{ .Permalink }}">
+								<span>{{ .Title }}</span>
+							</a>
+							<time class="meta-data middot" datetime="{{ .Date.Format (.Site.Params.dateform) }}">
+								{{ .Date.Format (.Site.Params.dateform) }}
+							</time>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		{{ partial "footer" . }}
+	</div>
+</div>
+
+{{ end }}

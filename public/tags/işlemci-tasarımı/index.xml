@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>Işlemci-Tasarımı on Emin Fedar | Kişisel Blog</title>
+    <link>http://localhost:1313/tags/i%C5%9Flemci-tasar%C4%B1m%C4%B1/</link>
+    <description>Recent content in Işlemci-Tasarımı on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Fri, 20 Nov 2020 23:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/i%C5%9Flemci-tasar%C4%B1m%C4%B1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sıfırdan İşlemci | 4.1) Execute (Çalıştır) - ALU</title>
+      <link>http://localhost:1313/riscv/4-1-execute-alu/</link>
+      <category>işlemci-tasarımı</category>
+      <category>risc-v</category><pubDate>Fri, 20 Nov 2020 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/riscv/4-1-execute-alu/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/nyLLdkdDJYY&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;p&gt;Bir sonraki ders: &lt;a href=&#34;#&#34;&gt;Sıfırdan İşlemci | 4.2) Execute (Çalıştır)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sıfırdan İşlemci | 3) Registers (Kaydediciler)</title>
+      <link>http://localhost:1313/riscv/3-register/</link>
+      <category>işlemci-tasarımı</category>
+      <category>risc-v</category><pubDate>Fri, 13 Nov 2020 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/riscv/3-register/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/lixgWkTu60U&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;p&gt;Bir sonraki ders: &lt;a href=&#34;http://localhost:1313/sifirdan-islemci-4-1-execute-alu&#34;&gt;Sıfırdan İşlemci | 4) Execute (Çalıştır) - ALU&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sıfırdan İşlemci | 2.2) Decode (Çöz)</title>
+      <link>http://localhost:1313/riscv/2-2-decode/</link>
+      <category>işlemci-tasarımı</category>
+      <category>risc-v</category><pubDate>Fri, 06 Nov 2020 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/riscv/2-2-decode/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/-GKnYy41j5Q&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;p&gt;Bir sonraki ders: &lt;a href=&#34;http://localhost:1313/sifirdan-islemci-3-registers&#34;&gt;Sıfırdan İşlemci | 3) Registers (Kaydediciler)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sıfırdan İşlemci | 2.1) Decode (Çöz)</title>
+      <link>http://localhost:1313/riscv/2-1-decode/</link>
+      <category>işlemci-tasarımı</category>
+      <category>risc-v</category><pubDate>Fri, 30 Oct 2020 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/riscv/2-1-decode/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/zHecPNEElE8&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;p&gt;Bir sonraki ders: &lt;a href=&#34;http://localhost:1313/sifirdan-islemci-2-2-decode&#34;&gt;Sıfırdan İşlemci | 2.2) Decode (Çöz)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sıfırdan İşlemci | 1) Fetch (Getir)</title>
+      <link>http://localhost:1313/riscv/1-fetch/</link>
+      <category>işlemci-tasarımı</category>
+      <category>risc-v</category><pubDate>Tue, 20 Oct 2020 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/riscv/1-fetch/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/c_DDTWgoA6A&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr&gt;
+&lt;p&gt;Bir sonraki ders: &lt;a href=&#34;http://localhost:1313/sifirdan-islemci-2-1-decode&#34;&gt;Sıfırdan İşlemci | 2.1) Decode (Çöz)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sıfırdan İşlemci | 0) İşlemci mimarisi ve RISC-V</title>
+      <link>http://localhost:1313/riscv/0-riscv-mimarisi/</link>
+      <category>işlemci-tasarımı</category>
+      <category>risc-v</category><pubDate>Mon, 19 Oct 2020 23:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/riscv/0-riscv-mimarisi/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/8q-Oz_DO4Mw&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Merhabalar, bu seride birlikte RISC-V Komut Setini işleyebilen Tek çekirdekli, Tek çevrimli ve 32 Bit bir işlemci tasarlayacağız.&lt;/p&gt;
+&lt;p&gt;Daha sonra da bu işlemcimizi &lt;a href=&#34;https://en.wikipedia.org/wiki/Instruction_pipelining&#34;&gt;Pipelined&lt;/a&gt; hale getirip performansını arttıracağız.&lt;/p&gt;
+&lt;h2 id=&#34;seriye-başlamadan-önce-gereksinimler&#34;&gt;Seriye başlamadan önce gereksinimler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mantık Devreleri&lt;/strong&gt; bilgisi&lt;/li&gt;
+&lt;li&gt;İkili &lt;em&gt;(Binary)&lt;/em&gt; sistemler ve aritmetiği&lt;/li&gt;
+&lt;li&gt;Basit elektrik bilgisi (kabloları birbirine bağlama :))&lt;/li&gt;
+&lt;li&gt;Yanmaya hazır bir beyin 🤯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hazırsanız başlayalım!&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;işlemci-nasıl-çalışır&#34;&gt;İşlemci nasıl çalışır?&lt;/h2&gt;
+&lt;p&gt;Bir bilgisayar temel olarak iki birimden oluşur: &lt;strong&gt;İşlemci ve RAM(Bellek)&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

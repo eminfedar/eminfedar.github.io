@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> C&#43;&#43;11: Lambda - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="http://localhost:1313/c&#43;&#43;11-lambda/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="C&#43;&#43;11: Lambda">
+  <meta property="og:description" content="C&#43;&#43;11&#39;de &#34;Lambda Fonksiyonlar&#34; nedir?">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2020-03-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-03-11T00:00:00+00:00">
+    <meta property="article:tag" content="C&#43;&#43;11">
+    <meta property="article:tag" content="C&#43;&#43;">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="C&#43;&#43;11: Lambda">
+    <meta name="twitter:description" content="C&#43;&#43;11&#39;de &#34;Lambda Fonksiyonlar&#34; nedir?">
+    
+
+    <meta name="twitter:image" content="http://localhost:1313/">
+    <link rel="canonical" href="http://localhost:1313/c&#43;&#43;11-lambda/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="http://localhost:1313/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							C&#43;&#43;11: Lambda
+						</span>
+						
+						
+						
+						<span class="date middot meta-data" title='Wed Mar 11 2020 00:00:00 UTC'>
+							2020-03-11
+						</span>
+						<span class="reading-time middot meta-data">
+							5 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="http://localhost:1313/c&#43;&#43;11-lambda/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="http://localhost:1313//tags/c&#43;&#43;11">
+								#C&#43;&#43;11
+							</a>
+						</li>
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="http://localhost:1313//tags/c&#43;&#43;">
+								#C&#43;&#43;
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<p>Merhabalar, bu yazıda C++11 sürümünde dile eklenmiş <strong>Lambda Fonksiyonlar</strong>ı inceleyeceğiz.</p>
+<hr>
+<h2 id="nasıl-kullanılır">Nasıl kullanılır?</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Tanım:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#f92672">&amp;</span>, <span style="color:#f92672">=</span>, Ek scope değişkenleri] (fonksiyonun parametreleri...)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Kodlar...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><ul>
+<li><strong>&amp;</strong>  : Üst scope&rsquo;taki değişkenlerin <strong>bizzat kendilerini</strong> al.</li>
+<li><strong>=</strong>  : Üst scope&rsquo;taki değişkenlerin sadece <strong>değerlerini</strong> al.</li>
+</ul>
+<p><strong>&amp;</strong> kullanımına örnek:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> [<span style="color:#f92672">&amp;</span>]() {
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> a; <span style="color:#75715e">// 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fonksiyon();
+</span></span></code></pre></div><p><strong>=</strong> kullanına örnek:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> [<span style="color:#f92672">=</span>]() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// a = 10; ERROR: expression must be a modifiable lvalue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> a; <span style="color:#75715e">// Değerini kullanabiliriz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fonksiyon();
+</span></span></code></pre></div><p><strong>Not:</strong> Varsayılan olarak scope &ldquo;değer&rdquo; olarak çalışır. <em>(yani boş bırakırsanız [] ile [=] aynı)</em>
+<br> <strong>Not2:</strong> Eğer parametre girmeyecekseniz parametre parantezlerini <code>()</code> yazmayabilirsiniz:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> f <span style="color:#f92672">=</span> [] {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p><strong>Ek scope değişkenleri</strong> kullanımına örnek:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> [<span style="color:#f92672">=</span>, <span style="color:#f92672">&amp;</span>b]() {
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// b&#39;yi özellikle adresiyle aldık, bizzat kendisini kullanabiliriz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// a = 10; ERROR: expression must be a modifiable lvalue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> a; <span style="color:#75715e">// 5 (Değer olarak kullanabiliyoruz.)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> b; <span style="color:#75715e">// 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fonksiyon(); <span style="color:#75715e">// 5 10
+</span></span></span></code></pre></div><p>Bu örneğin <strong>tam tersi</strong> de mümkündür:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> [<span style="color:#f92672">&amp;</span>, b]() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// b = 10; b&#39;yi sadece verisiyle aldık, bizzat kendisini değiştiremiyoruz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// Üst Scopetaki değişkenlerin hepsini adresleriyle(bizzat kendilerini) alıyoruz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> a; <span style="color:#75715e">// 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> b; <span style="color:#75715e">// 6 (Değer olarak kullanabiliyoruz.)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fonksiyon(); <span style="color:#75715e">// 10 6
+</span></span></span></code></pre></div><p>Eğer dönüş yani <code>return</code> tipiyle bir lambda fonksiyon tanımlamak isterseniz:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> []() <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="ne-işe-yarar">Ne işe yarar?</h2>
+<h3 id="1-satır-içinde-fonksiyon-tanımlayabilmeyi-sağlar">1. Satır içinde fonksiyon tanımlayabilmeyi sağlar:</h3>
+<p>Normal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fonksiyon</span>(<span style="color:#66d9ef">int</span> deger)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>onClick( <span style="color:#f92672">&amp;</span>fonksiyon );
+</span></span></code></pre></div><p>Lambda:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>onClick( [](<span style="color:#66d9ef">int</span> deger) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>});
+</span></span></code></pre></div><h3 id="2-kodun-çok-ve-karmaşık-gözükmesini-engeller">2. Kodun çok ve karmaşık gözükmesini engeller:</h3>
+<p>Geçici veya tek kullanımlık bir fonksiyonu tanımlamak için .h&rsquo;ta tanımını, .cpp&rsquo;de içini yazıp sonra kullanmak yerine direk tanımladığınız gibi kullanabilirsiniz.</p>
+<p>Normal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// A.h
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fonksiyon</span>(<span style="color:#66d9ef">int</span> deger);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// A.cpp:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;A.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> fonksiyon(<span style="color:#66d9ef">int</span> deger) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Main.cpp:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;A.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    fonksiyon(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Lambda:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Main.cpp:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> [] (<span style="color:#66d9ef">int</span> deger) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fonksiyon(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h3 id="kıyaslama-javascript-vs-c">Kıyaslama: Javascript vs. C++:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Javascript&#39;te ek bir scope filtresi belirtmemize gerek yok.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Varsayılan olarak C++&#39;taki [&amp;] gibi çalışr.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fonksiyon</span> <span style="color:#f92672">=</span> ( <span style="color:#a6e22e">parametre</span> ) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Merhaba&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// auto != var (unutmayalım)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">auto</span> fonksiyon <span style="color:#f92672">=</span> [<span style="color:#f92672">&amp;</span>] (<span style="color:#66d9ef">int</span> parametre) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Merhaba&#34;</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>C++&lsquo;ta lambdanın veri tipi her tanımlanmış lambdanın kendisine has <strong>unique bir tiptir</strong>. Bu yüzden dönüş tipini <code>auto</code> yapmalısınız.</p>
+<p>Eğer isterseniz <code>std::function</code> tipini de kullanabilirsiniz</p>
+<blockquote>
+<p><code>std::function</code> ile değişkenin içinde tanımladığınız fonksiyonu sonradan değiştirebilirsiniz fakat performansı daha düşüktür):</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>function<span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">void</span>() <span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> []() {
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Selam&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// void döndüren ve parametresiz bir fonksiyon
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> []() {
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Merhaba&#34;</span>; <span style="color:#75715e">// fonksiyonun içini değiştirebiliyoruz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Not: <code>auto</code> ile tanımlanan lambda kendine has basit bir fonksiyon tipinde olduğundan <strong>performansı</strong> <code>std::function</code>&lsquo;a göre çok çok daha iyidir**:</p>
+<h3 id="performans-analizi-stdfunction-auto-normal-fonksiyon"><strong>Performans analizi:</strong> std::function, auto, normal fonksiyon</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1 Milyon defa std::function ve auto lambda ve normal fonksiyon fonksiyonu çağırma testi:</span>
+</span></span><span style="display:flex;"><span>eminfedar@pardus:~$ g++ test.cpp --std<span style="color:#f92672">=</span>c++11 <span style="color:#f92672">&amp;&amp;</span> ./a.out 
+</span></span><span style="display:flex;"><span>std::function: 17.3873 seconds
+</span></span><span style="display:flex;"><span>auto-lambda: 1.77092 seconds
+</span></span><span style="display:flex;"><span>normal fonksiyon: 2.24995 seconds
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>eminfedar@pardus:~$ ./a.out 
+</span></span><span style="display:flex;"><span>std::function: 15.4777 seconds
+</span></span><span style="display:flex;"><span>auto-lambda: 1.39287 seconds
+</span></span><span style="display:flex;"><span>normal fonksiyon: 1.86177 seconds
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>eminfedar@pardus:~$ ./a.out 
+</span></span><span style="display:flex;"><span>std::function: 19.1943 seconds
+</span></span><span style="display:flex;"><span>auto-lambda: 1.76885 seconds
+</span></span><span style="display:flex;"><span>normal fonksiyon: 2.3291 seconds
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>eminfedar@pardus:~$ ./a.out 
+</span></span><span style="display:flex;"><span>std::function: 15.2639 seconds
+</span></span><span style="display:flex;"><span>auto-lambda: 1.39298 seconds
+</span></span><span style="display:flex;"><span>normal fonksiyon: 1.85381 seconds
+</span></span></code></pre></div><p>test.cpp:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;functional&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;chrono&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>function<span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">void</span>() <span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> [] {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> b <span style="color:#f92672">=</span> [] {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">c</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> start <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        a();
+</span></span><span style="display:flex;"><span>    }    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> finish <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>duration<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span>, std<span style="color:#f92672">::</span>milli<span style="color:#f92672">&gt;</span> elapsed <span style="color:#f92672">=</span> finish <span style="color:#f92672">-</span> start;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;std::function: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> elapsed.count() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; seconds&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        b();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    finish <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+</span></span><span style="display:flex;"><span>    elapsed <span style="color:#f92672">=</span> finish <span style="color:#f92672">-</span> start;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;auto-lambda: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> elapsed.count() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; seconds&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000000</span>; i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        c();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    finish <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>chrono<span style="color:#f92672">::</span>high_resolution_clock<span style="color:#f92672">::</span>now();
+</span></span><span style="display:flex;"><span>    elapsed <span style="color:#f92672">=</span> finish <span style="color:#f92672">-</span> start;
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;normal fonksiyon: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> elapsed.count() <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; seconds&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="nerelerde-kullanalım">Nerelerde kullanalım?</h3>
+<p>Şahsen en çok kulandığım 2 alan var:</p>
+<ol>
+<li>Olayları handle edecek fonksiyonlarda:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Socket<span style="color:#f92672">*</span> socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket;
+</span></span><span style="display:flex;"><span>socket.onMesssage( [<span style="color:#f92672">&amp;</span>](<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> message) {
+</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Mesaj: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> message;
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><ol start="2">
+<li>Geçici olarak lazım olan ve sadece o iş için .h ve .cpp dosyalarında fonksiyon tanımlamak istemediğiniz durumlarda <em>(1. alan da bunun içine girer.)</em></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>    <span style="color:#66d9ef">auto</span> enBuyugu <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a : b;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">100</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ... Kisi diye bir sınıf ve .yas diye bir alanı olsun.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// Bir döngüde de elimizdeki kişilerin maks ebeveyn yaşını bulalım:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> maxYas <span style="color:#f92672">=</span> enBuyugu(kisiler[i].anne.yas, kisilar[i].baba.yas);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ... maxYas&#39;i kullanırız...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span></code></pre></div><p>Veya bundan daha kompleks kıyaslamaları yapmak için hemen döngünün üstünde bir <strong>lambda</strong> fonksiyon tanımlayıp kullanabiliriz.</p>
+<p>Böylece sadece bir yerde kullanılacak lokal fonksiyonlar için global fonksiyonlar tanımlamayız.</p>
+<blockquote>
+<p>C++11&rsquo;in dile getirdiği en güzel nimetlerden biri olan Lambda da kısaca böyleydi.</p></blockquote>
+<hr>
+<p>Eksik veya hatalı bıraktığımız bir yer görürseniz yorumlara yazmayı unutmayın :)</p>
+<p>Hayırlı günleriniz olsun efendim.</p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="http://localhost:1313/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

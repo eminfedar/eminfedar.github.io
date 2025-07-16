@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> 0 → RAM | 3) Karnaugh Haritaları - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="https://eminfedar.github.io/blog/ram/3-karnaugh-haritalari/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="0 → RAM | 3) Karnaugh Haritaları">
+  <meta property="og:description" content="Merhabalar! Önceki derste Mantık Kapılarına ve Doğruluk Tablolarına giriş yapmıştık. Doğruluk Tabloları güzeldi fakat bir eksiği vardı ki; kapı sayısı arttıkça Doğruluk Tablolarının çekilemez uzunluklara ulaşması ve sadeleştirme işlemlerinin biraz daha zor görülmesiydi.
+İşte bu sıkıntıları çekmemek için Maurice Karnaugh ve Edward Veitch’in güzel bir çalışması olan Karnaugh (Karnaugh-Veitch) Haritalarını kullanacağız.
+Karnaugh Haritaları (Karnaugh-Veitch Maps) Karnaugh Haritaları basitçe doğruluk tablosunun aşağıya doğru uzayan hali yerine iki boyutlu bir tablo haline getirilmesinden ibaret. Fakat bize sağladığı kolaylıklar çok fazla. :)">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-03-04T09:00:03+00:00">
+    <meta property="article:modified_time" content="2020-03-04T09:00:03+00:00">
+    <meta property="article:tag" content="ram">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="0 → RAM | 3) Karnaugh Haritaları">
+    <meta name="twitter:description" content="">
+    
+
+    <meta name="twitter:image" content="https://eminfedar.github.io//images/ram/kapak-karnaugh.png">
+    <link rel="canonical" href="https://eminfedar.github.io/blog/ram/3-karnaugh-haritalari/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="https://eminfedar.github.io/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="https://eminfedar.github.io/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+				<img width="100%" style="border-radius:11pt; box-shadow: 0 0 11pt lightgray;"
+					src="/images/ram/kapak-karnaugh.png" />
+				<br>
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							0 → RAM | 3) Karnaugh Haritaları
+						</span>
+						
+						
+						<br>
+						<span class="meta-data" title="Emin Fedar">
+							Emin Fedar
+						</span>
+
+						
+						
+						<span class="date middot meta-data" title='Wed Mar 4 2020 09:00:03 UTC'>
+							2020/03/04
+						</span>
+						<span class="reading-time middot meta-data">
+							4 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="https://eminfedar.github.io/blog/ram/3-karnaugh-haritalari/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="https://eminfedar.github.io//tags/ram">
+								#ram
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<h2 id="merhabalar">Merhabalar!</h2>
+<p>Önceki derste <strong>Mantık Kapıları</strong>na ve <strong>Doğruluk Tabloları</strong>na giriş yapmıştık. Doğruluk Tabloları güzeldi fakat bir eksiği vardı ki; kapı sayısı arttıkça <strong>Doğruluk Tabloları</strong>nın çekilemez uzunluklara ulaşması ve sadeleştirme işlemlerinin biraz daha zor görülmesiydi.</p>
+<p>İşte bu sıkıntıları çekmemek için Maurice Karnaugh ve Edward Veitch’in güzel bir çalışması olan Karnaugh (Karnaugh-Veitch) Haritalarını kullanacağız.</p>
+<h2 id="karnaugh-haritaları-karnaugh-veitch-maps">Karnaugh Haritaları (Karnaugh-Veitch Maps)</h2>
+<p>Karnaugh Haritaları basitçe doğruluk tablosunun aşağıya doğru uzayan hali yerine <strong>iki boyutlu bir tablo</strong> haline getirilmesinden ibaret. <strong>Fakat bize sağladığı kolaylıklar çok fazla. :)</strong></p>
+<h3 id="bir-örnek-yapalım">Bir örnek yapalım:</h3>
+<p>Örneğimiz bir toplayıcı devresi olsun. Devremizde <strong>Bit-1</strong>, <strong>Bit-2</strong> butonları (girişleri) ve <strong>SONUÇ</strong> ve <strong>ELDE</strong> çıkışları (buralara LED bağlayabiliriz) olsun.</p>
+<p>Gireceğimiz iki biti toplayan ve eğer <strong>elde <em>(carry)</em></strong> değeri elde edersek <strong>ELDE</strong> çıkışını 1 yapan <em>(amma çok elde kelimesi geçti… :))</em>, toplama sounucunu da <strong>SONUÇ</strong> çıkışına veren bir devre yapalım. Bu devrenin doğruluk tablosunu çizersek şöyle bir sonuç elde ederiz:</p>
+<p><img src="/images/ram/halfadder-tablo.png" alt="Yarım Toplayıcı(Half-Adder) Doğruluk Tablosu"><em>Yarım Toplayıcı(Half-Adder) Doğruluk Tablosu</em></p>
+<p><strong>“Sonuç”</strong> çıkışı görebileceğimiz üzere bir <strong>Özel VEYA</strong> (XOR) kapısı ile gerçeklenebilir, çünkü sadece tet bir bit <strong>1</strong> olduğu zaman çıkış <strong>1</strong>.</p>
+<blockquote>
+<p>XOR: ⊕</p>
+<p>XNOR: ⊙</p></blockquote>
+<p><strong>“Elde”</strong> çıkışımız ise sadece iki bit de 1 olduğu zaman 1 oluyor. O halde Elde çıkışı bir <strong>VE</strong> kapısı ile gerçeklenebilir. Bu durumda devremizin Sonuç çıkışının mantık kapılarıyla formülünü çıkarmak istersek:</p>
+<blockquote>
+<p><strong>Sonuç</strong> = <strong>b1 ⊕ b2</strong></p>
+<p><strong>Elde</strong> = <strong>b1 . b2</strong></p></blockquote>
+<p>Tebrikler, bir <strong>Yarım Toplayıcı</strong> yaptınız :)</p>
+<h2 id="iyi-de-neden-yarım-oldu-ki">İyi de neden “Yarım” oldu ki?</h2>
+<p><img src="/images/ram/halfadder.gif" alt="Yarım Toplayıcı (Half-Adder) devresi"></p>
+<p><em>Yarım Toplayıcı (Half-Adder) devresi</em></p>
+<p>Bu devreye “<strong>Yarım Toplayıcı</strong>” denilmesinin sebebi işleme bir önceki sonucun eldesini katmıyor olması. Devre çıkış olarak ELDE veriyor, fakat giriş olarak başka bir toplayıcıdan gelen ELDE’yi <strong>dikkate almıyor</strong>.</p>
+<p>O halde <strong>girişlerimize</strong> de bir <strong>ELDE</strong> ekleyip <strong>TAM</strong> bir toplayıcı yapalım :)</p>
+<p><strong>Tam Toplayıcının doğruluk tablosunu çizersek</strong>:</p>
+<p><img src="/images/ram/fulladder-tablo.png" alt="b1, b2 ve Elde girişine sahip tam toplayıcının doğruluk tablosu"></p>
+<p><em>b1, b2 ve Elde girişine sahip tam toplayıcının doğruluk tablosu</em></p>
+<p><em>(eveeet işler biraz karıştı değil mi :))</em></p>
+<p><strong>Sonuç</strong> ve <strong>Elde</strong> çıkışlarımızda 1&rsquo;ler biraz karışık şekilde dağılmış. Örneğin yarım toplayıcıdaki gibi <strong>“Sonuç”</strong> çıkışı için hangi kapı veya kapılar gerekir kestiremiyoruz.</p>
+<h3 id="o-zaman-karnaugh">O zaman Karnaugh!</h3>
+<p><img src="/images/ram/fulladder-karnaugh-animasyon.gif" alt="Sonuç ve Elde çıkışlarımızı elde etmek için kullandığımız Karnaugh Haritaları"></p>
+<p><em>Sonuç ve Elde çıkışlarımızı elde etmek için kullandığımız Karnaugh Haritaları</em></p>
+<p><strong>Elde</strong> ve <strong>Sonuç</strong> çıkışları için; <strong>b1</strong>, <strong>b2</strong> ve <strong>E</strong> girişlerine göre <strong>Karnaugh Haritası</strong> çizersek yukarıdaki gibi iki tane harita elde ederiz.</p>
+<p><em>(Karnaugh’da her çıkış için ayrı tablo çizilir.)</em></p>
+<p>Önemli NOT:</p>
+<blockquote>
+<p>Karnaugh’da sütun veya satırlar sırayla <strong>00–01–10–11</strong> şeklinde <strong>DEĞİL</strong>, <strong>GrayCode</strong> dizilimi olan ve bir sonraki durumla arasında sadece 1 bit fark olan <strong>00–01–11–10</strong> formatında yazılır.
+<strong>GrayCode</strong> formatına göre eğer bir satırda üç tane değişkenimiz olsaydı: <strong>000–001–011–010–110–111–101–100</strong> şeklinde yazacaktık. (iki durum arası sadece 1 bit farklı.)</p></blockquote>
+<h3 id="haritanın-üzerine-niye-kutular-çizdik-ki">Haritanın üzerine niye kutular çizdik ki?</h3>
+<p>Karnaugh Haritalarını özel kılan şey de bu.</p>
+<p>Doğruluk Tablosunda göremediğimiz “1&rsquo;ler arasındaki ilişkiyi” burada gözle görebiliyoruz, bu da bize <strong>1&rsquo;leri gruplandırıp</strong>, aynı sonucu verecek devre için <strong>fazladan</strong> kullanacağımız elemanlardan kurtulabilmemizi sağlıyor.</p>
+<p>Mesela <strong>ELDE</strong>’nin haritasındaki mavi kutuyu düşünelim. E b1 b2 sırasıyla yazarsam 101 ve 111 aynı sonucu veriyor <em>(yani 1)</em>. Yani ortadaki değerin (b1) 0 veya 1 olması sonucu etkilemiyor. Bu yüzden b1 girişini devreye katmayıp, <strong>E</strong> ve <strong>b2</strong>&lsquo;yi bir <strong>VE</strong> kapısına bağlıyoruz.</p>
+<h3 id="peki-neyi-sadeleştirdi-bu">Peki neyi sadeleştirdi bu?</h3>
+<p>Eğer b1&rsquo;i de kaale alsaydık aynı sonucu elde edebilen şöyle bir devre kurabilirdik:</p>
+<blockquote>
+<p>ELDE = E.<strong>(b1.b2 + b1’.b2)</strong> + …</p></blockquote>
+<p>Halbuki Karnaugh sayesinde yukarıda 5 kapı kullanırken, sadeleştirdiğimiz sonuçta 2 kapı kullanıyoruz:</p>
+<blockquote>
+<p>ELDE = <strong>E.b2</strong> + …</p></blockquote>
+<h2 id="elde-tablosundaki-yan-yana-üç-tane-1i-neden-bir-grup-yapıp-daha-fazla-sadeleştirme-yapmadık">“ELDE” tablosundaki yan yana üç tane 1&rsquo;i neden bir grup yapıp daha fazla sadeleştirme yapmadık?</h2>
+<p>Karnaugh Haritalarıda gruplama yaparken elbette belirli kurallarımız var, gruplama yaparken bu kurallara göre yapıyoruz:</p>
+<blockquote>
+<p>Sadece <strong>2ᶰ katları</strong> kadar 1&rsquo;ler <strong>gruplanabilir:</strong></p></blockquote>
+<p><img src="/images/ram/karna-kural-1.gif" alt="Sadece 2ᶰ katları kadar 1&rsquo;ler gruplanabilir"></p>
+<blockquote>
+<p>Gruplamaya önce <strong>en az komşuya sahip</strong> 1&rsquo;lerden başla:</p></blockquote>
+<p><img src="/images/ram/karna-kural-2.gif" alt="Gruplamaya önce en az komşuya sahip 1&rsquo;lerden başla."></p>
+<p>Çok da değil aslında 2 tane mühim kuralımız varmış :)</p>
+<h3 id="konumuza-geri-dönelim-tam-toplayıcı">Konumuza geri dönelim: “Tam Toplayıcı”</h3>
+<p>Karnaugh haritasını çizdiğimiz çıkışların denklemlerini yazalım:</p>
+<p><strong>SONUÇ</strong> = E.b1&rsquo;.b2&rsquo; + E’.b1&rsquo;.b2 + E.b1.b2 + E’.b1.b2&rsquo;
+<strong>ELDE</strong> = E.b2 + E.b1 + b1.b2</p>
+<p>Karnaugh’daki grupları yazdığımızda elde ettiğimiz sonuçlar böyle, fakat yine de tam istediğimiz sadelikte değil. Mantık ilminin matematiksel özelliklerini kullanarak buradan da sadeleştirmeler yapabiliriz.</p>
+<p><strong>SONUÇ</strong> = E.(b1&rsquo;.b2&rsquo; + b1.b2) + E’.(b1&rsquo;.b2 + b1.b2')</p>
+<p>Dikkatli bakarsak 1. parantez içinin XNOR, (00 veya 11 koşulu)
+2. parantez içinin ise XOR (01 veya 10 koşulu) olduğunu görebiliriz.</p>
+<p>En sade haliyle **SONUÇ **çıkışımızın formülü şöyle olacaktır:</p>
+<p><strong>SONUÇ</strong> = E.(b1 ⊙ b2) + E’.(b1 ⊕ b2)
+<strong>SONUÇ</strong> = E.<strong>(b1 ⊕ b2)’</strong> + E’.(b1 ⊕ b2)</p>
+<blockquote>
+<p>A.B’ + A’.B = A⊕B</p></blockquote>
+<p><strong>SONUÇ</strong> = E ⊕ b1 ⊕ b2
+(2 XOR)</p>
+<p>ELDE çıkışında ise E’leri paranteze alabiliriz:</p>
+<p><strong>ELDE</strong> = E.(b1⊕b2) + b1.b2
+<em>(2 VE, 1 XOR (yukarıdan), 1 VEYA)</em></p>
+<p>Devremizi gerçekleyelim:</p>
+<p><img src="/images/ram/fulladder.gif" alt="Tam Toplayici"></p>
+<h3 id="karnaughyı-da-hallettik">Karnaugh’yı da hallettik!</h3>
+<p>Temel derslerden en önemlisi olarak gördüğüm Karnaugh Haritalarını da bu yazıda bitirelim. <strong>0&rsquo;dan RAM yapma hedefimize adım adım ilerliyoruz.</strong></p>
+<p>Bir sonraki yazımız olan <a href="0-dan-ram-4-kod-cozuculer"><strong>0 → RAM | 4) Kod çözücüler</strong></a>&lsquo;de görüşmek üzere.</p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="https://eminfedar.github.io/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

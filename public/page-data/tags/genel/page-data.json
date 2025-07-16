@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-tags-js",
-    "path": "/tags/genel/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/blog/bismillah/"},"frontmatter":{"date":"01 March, 2020","title":"Bismillah","description":"Bismillah her hayrın başıdır.","image":"/static/genel/bismillah.jpg","tags":["Genel"]}}},{"node":{"fields":{"slug":"/about/about/"},"frontmatter":{"date":"01 March, 2019","title":"Ben kimim?","description":"Ben kimim?","image":"/static/genel/wallpaper.jpg","tags":["Genel"]}}}]}},"pageContext":{"tag":"Genel"}},
-    "staticQueryHashes": []}

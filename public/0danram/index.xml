@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>0danRAMs on Emin Fedar | Kişisel Blog</title>
+    <link>http://localhost:1313/0danram/</link>
+    <description>Recent content in 0danRAMs on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Mon, 02 Mar 2020 19:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/0danram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0 → RAM | 1) RAM Nedir?</title>
+      <link>http://localhost:1313/0danram/1-ram-nedir/</link>
+      <category>ram</category><pubDate>Mon, 02 Mar 2020 19:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/0danram/1-ram-nedir/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ram/kapak-ram-nedir.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;(0 → RAM)&lt;/strong&gt;* *serisinde sizlerle beraber &lt;strong&gt;sıfırdan&lt;/strong&gt; kendi &lt;strong&gt;RAM&lt;/strong&gt;’imizi tasarlayacağız. Bu yazıda tasarıma hemen geçmesek de genel bir bilgi edinmek için okumanız faydalı olacaktır. Başarılar!&lt;/p&gt;
+&lt;h3 id=&#34;ram-nedir&#34;&gt;Ram Nedir?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt;andom &lt;strong&gt;A&lt;/strong&gt;ccess &lt;strong&gt;M&lt;/strong&gt;emory, yani Rastgele Erişimli Bellek.&lt;/p&gt;
+&lt;p&gt;“Rastgele Erişimli” denilmesinin sebebi bellekteki hafıza bölümlerine “kaotik” veya “neresi rast gelirse” şeklinde erişmemiz değil.&lt;/p&gt;
+&lt;p&gt;İstediğimiz (yani herhangi bir, yani rastgele), hafıza bölümüne &lt;strong&gt;tek seferde&lt;/strong&gt; erişebildiğimiz için böyle tesmiye edilmiş.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/ram/rastgele-vs-sirali.gif&#34; alt=&#34;Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]&#34;&gt;
+&lt;br&gt; &lt;em&gt;Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

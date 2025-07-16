@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> 0 → RAM | 2) Mantık Kapıları - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="https://eminfedar.github.io/blog/ram/2-mantik-kapilari/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="0 → RAM | 2) Mantık Kapıları">
+  <meta property="og:description" content="Merhabalar! Bu derste mantıksal elektronik devreleri kurmak için olmazsa olmazımız olan Mantık Kapılarına göz atacağız.
+Mantığın kapısı mı olur? Mantık ilmi, bizim günlük hayatta karar verirken beynimiz ile yaptığımız işlemleri matematiğe uyarlayan bir ilim. Bu ilim pek çok devasa ilim dalının temellerini oluşturuyor.
+Bugün bilgisayarda yaptığımız işlerin büyük çoğunluğu mantıksal çıkarımlar sayesinde olmakta.
+Mesela bu yazıyı beğenmek için beğen butonuna tıklamak. Bilgisayar sizin başka bir yere değil de özel olarak o butona tıkladığınızı nasıl anlar ki?">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-03-03T19:00:00+00:00">
+    <meta property="article:modified_time" content="2020-03-03T19:00:00+00:00">
+    <meta property="article:tag" content="ram">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="0 → RAM | 2) Mantık Kapıları">
+    <meta name="twitter:description" content="">
+    
+
+    <meta name="twitter:image" content="https://eminfedar.github.io//images/ram/kapak-mantik-kapilari.png">
+    <link rel="canonical" href="https://eminfedar.github.io/blog/ram/2-mantik-kapilari/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="https://eminfedar.github.io/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="https://eminfedar.github.io/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+				<img width="100%" style="border-radius:11pt; box-shadow: 0 0 11pt lightgray;"
+					src="/images/ram/kapak-mantik-kapilari.png" />
+				<br>
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							0 → RAM | 2) Mantık Kapıları
+						</span>
+						
+						
+						<br>
+						<span class="meta-data" title="Emin Fedar">
+							Emin Fedar
+						</span>
+
+						
+						
+						<span class="date middot meta-data" title='Tue Mar 3 2020 19:00:00 UTC'>
+							2020/03/03
+						</span>
+						<span class="reading-time middot meta-data">
+							4 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="https://eminfedar.github.io/blog/ram/2-mantik-kapilari/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="https://eminfedar.github.io//tags/ram">
+								#ram
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<h2 id="merhabalar">Merhabalar!</h2>
+<p>Bu derste mantıksal elektronik devreleri kurmak için olmazsa olmazımız olan Mantık Kapılarına göz atacağız.</p>
+<h3 id="mantığın-kapısı-mı-olur">Mantığın kapısı mı olur?</h3>
+<p>Mantık ilmi, bizim günlük hayatta <strong>karar</strong> verirken beynimiz ile yaptığımız işlemleri matematiğe uyarlayan bir ilim. Bu ilim pek çok devasa ilim dalının temellerini oluşturuyor.</p>
+<p>Bugün bilgisayarda yaptığımız işlerin büyük çoğunluğu mantıksal çıkarımlar sayesinde olmakta.</p>
+<blockquote>
+<p>Mesela bu yazıyı beğenmek için beğen butonuna tıklamak. Bilgisayar sizin başka bir yere değil de özel olarak o butona tıkladığınızı nasıl anlar ki?</p></blockquote>
+<p><strong>İşte burada mantık ilmi devreye girer.</strong> Kendi aklımızla bir butona tıklama işini nasıl tahayyül ediyorsak onu formülize edip bilgisayarın da aynı şeyi algılamasını sağlayabiliriz.</p>
+<p>Matematikte kullanılan mantıksal işaretler:</p>
+<ul>
+<li>
+<p><strong>Λ</strong> | <strong>.</strong> | <strong>x</strong> = Ve</p>
+</li>
+<li>
+<p><strong>V</strong> | <strong>+</strong> = Veya</p>
+</li>
+<li>
+<p><strong>‘</strong> = Değil</p>
+</li>
+<li>
+<p><strong>⇒</strong> = İse</p>
+</li>
+<li>
+<p>⇔ = Çift yönlü ise (Ancak ve ancak)</p>
+</li>
+</ul>
+<h3 id="bir-mantıksal-işlem-örneği-yapalım">Bir mantıksal işlem örneği yapalım:</h3>
+<p>Mesela benim aklım o butona basabilmek için 2 şart koşuyor:</p>
+<ol>
+<li>
+<p>Ekrandaki imleç butonun üzerinde olmalı</p>
+</li>
+<li>
+<p>Elimdeki farenin sol tuşuna basmalıyım</p>
+</li>
+</ol>
+<p>Bu işlemi matematiksel mantık ile yazmak istersek basitçe şöyle yazabiliriz:</p>
+<blockquote>
+<p>A: İmlecin buton üzerinde olması
+B: Farenin sol tuşuna basılması
+Butonun tıklanmasına ise C diyelim.
+C, A ve B aynı anda sağlandığında doğru olur. Yani:</p></blockquote>
+<p>C = A ve B</p>
+<p>veya matematiksel olarak ifade edersek.</p>
+<p>C = A Λ B <br>
+C = A.B</p>
+<p>Bu işlemi biraz daha açarsak, A işlemi aslında imlecin koordinatları ile butonun koordinatları arasında bir hesaptan ibaret. Öyleyse şöyle yazabiliriz:</p>
+<p><em>(buradaki b.y b.x gibi &lsquo;.&rsquo; kullanımı butonun y,x gibi özelliklerine erişme manasında kullanılmıştır.)</em></p>
+<p><strong>b:</strong> Buton <br>
+<strong>f:</strong> Fare <br>
+<strong>A:</strong> (f.x ≥ b.x) Λ (f.x &lt; (b.x + b.genişlik)) Λ (f.y ≥ b.y) Λ (f.y &lt; (b.y + b.yükseklik)) <br>
+<strong>B:</strong> f.SolTuşuTıklandıMı <br></p>
+<blockquote>
+<p>Bugün neredeyse bütün tıklanma kontrolleri ve basit çarpışma kontrolü A ve B formülünün 1 veya 0 sonuçlanmasına göre kontrol edilmekte.</p></blockquote>
+<p>Koşullarımızı detaylandırdıysak artık <strong>C = A Λ B</strong> <em>(veya A.B, biz genelde yaygın olan nokta (.) gösterimini kullanacağız)</em> bize butonun tıklanıp tıklanmadığını veren mantıksal formül oldu.</p>
+<h3 id="birkaç-basit-sözlü-ifadeyi-mantıksal-ifadeye-çevirelim">Birkaç basit sözlü ifadeyi mantıksal ifadeye çevirelim:</h3>
+<p>“A butonuna basılır ve B butonuna basılmaz ise C koşulu doğrudur”:</p>
+<blockquote>
+<p>C = A.B’</p></blockquote>
+<p>“T düğmesi veya J düğmesine basılırsa K kliması açılsın”:</p>
+<blockquote>
+<p>K = T+J</p></blockquote>
+<p>“O ve P tuşları basılmıyor **veya **O ve P tuşları aynı anda basılıyor ise U koşulu doğrudur”:</p>
+<blockquote>
+<p>U = (O’.P’) + (O.P)</p></blockquote>
+<p>U = (O+P)’ + (O.P) şeklinde de yazılabilir. — “O veya P basılıyor değilse”</p>
+<p>Gördüğünüz gibi mantıksal ifadeler oluşturmak gayet kolay :)</p>
+<p>Mantıksal ifadeler hakkında daha fazla bilgiyi ve bazı matematiksel kuramları <em>(De Morgan Kuralları gibi)</em> pek çok internet sayfasında ve YouTube kanallarında bulabilirsiniz.</p>
+<h3 id="mantık-güzel-peki-kapıları-nedir">Mantık güzel, peki “Kapıları” nedir?</h3>
+<p><strong>Mantık Kapıları</strong> yukarıda sadece kağıt üzerinde ifade ettiğimiz mantıksal ifadeleri gerçek hayatta donanımsal olarak gerçekleştirmemize olanak sağlayan elektronik devre elemanlarıdır.</p>
+<blockquote>
+<p>Örneğin bir kumandada iki butona birden basıldığında bir cihazın çalışması</p></blockquote>
+<p>Elektronikte
+“VE kapısı” dediğimiz şey Mantıktaki <strong>Ve (Λ)</strong>’nin,
+“VEYA” kapısı da <strong>Veya (V)</strong>’nın karşılığıdır.</p>
+<p><img src="/images/ram/mantik-kapilari-hepsi.gif" alt="Mantık kapılarının tümü"></p>
+<p>Çalışma şekilleri yukarıdaki gibi verilmiş kapıların matematiksel olarak da karşılıklarını bilmek isteriz. Çünkü her zaman ezbere iş yapamayız veya ilgilenen ifade git gide karmaşıklaşıp büyüyebilir.</p>
+<p>Bu yüzden <strong>Doğruluk Tablolarını</strong> kullanırız. Doğruluk tabloları bir <strong>elemanın</strong> veya bir <strong>ifadenin</strong> tüm giriş kombinasyonları için çıkışlarını gösterdiğimiz bir tablodan ibaret. Çok basit fakat çok yararlı.</p>
+<h3 id="birkaç-doğruluk-tablosu-örneği">Birkaç Doğruluk Tablosu örneği:</h3>
+<p>Mesela A ve B girişlerimiz olsun, bunlardan <strong>sadece bir tanesi</strong> 1 olduğu zaman doğru olan sonuçla Doğruluk Tablosunu çizelim:</p>
+<p><img src="/images/ram/xor-tablo.png" alt="XOR Doğruluk Tablosu"></p>
+<p>Bu gördüğümüz tablo aslında <strong>Özel VEYA</strong>(XOR veya EXOR) kapısının doğruluk tablosudur.</p>
+<p><strong>Özel VEYA</strong> da örnek ile aynı şeyi gerçekleştirmekte. (yani Farklıysa 1, aynısya 0)</p>
+<p>Elinizdeki duruma göre istediğiniz girişlerde istediğiniz şekilde sonuçlar çıkaran doğruluk tabloları çizebilirsiniz.</p>
+<blockquote>
+<p>Matematiksel olarak ifade edilebilen her doğruluk tablosu gerçeğe dönüştürülebilir.
+Bu yüzden bir olayı <strong>doğruluk tablosuna</strong> dökebilmek, onu elektronik ortama aktarabilmek demektir.</p></blockquote>
+<p>Mesela yine A ve B girişlerimiz olsun, fakat şimdi sadece A da B de 1 olduğu zaman sonuç doğru olsun:</p>
+<p><img src="/images/ram/and-tablo.png" alt="AND Doğruluk Tablosu"></p>
+<p>Bu gördüğümüz tablo da aslında <strong>VE</strong> (AND) kapısının doğruluk tablosudur.</p>
+<p><strong>VE</strong> kapısı sadece iki giriş de <strong>1</strong> olduğu, yani elektrik geldiği zaman 1 olur, sonuç olarak o da elektrik verir.</p>
+<p>Doğruluk Tabloları küçük boyutlarda işimize yarıyor, fakat örneğin elimizde 5 tane durum var ise ne yapacağız? <em>(Bunun için 32 satırlık bir doğruluk tablosu yapmamız gerekir :))</em></p>
+<p><strong>Böyle durumlarda Karnaugh Haritaları kullanırız.</strong> Karnaugh Haritaları doğruluk tablosunun iki boyutlu düzleme dökülmüş halidir. Yani durumlar tek bir sütun kaplamak yerine satır ve sütunlara dağıtılırlar.</p>
+<p><img src="/images/ram/karna-ornek.png" alt="4 Duruma sahip basit bir karnaugh haritası. (Boş alanlar 0)"><br>
+<em>4 Duruma sahip basit bir karnaugh haritası. (Boş alanlar 0)</em></p>
+<p>Karnaugh Haritalarının bir diğer bir avantajı ise işlemi sadeleştirmenin çok kolay yapılabilmesidir.</p>
+<p>Örneğin biz A ve B’nin sadece 11&rsquo;de 1 ürettiğini gördüğümüz için kolayca bu tablo tek bir <strong>VE</strong> kapısıyla gerçeklenebilir diyebildik.</p>
+<p><strong>Fakat durum sayısı arttıkça birden fazla kapı gerekebilir. Ve bu durum işlem sadeleştirilmesi yapılmaz ise gereksiz kapı kullanımıyla sonuçlanabilir.</strong></p>
+<p><strong>Bu da daha fazla Masraf+ Boyut + Enerji harcaması demek.</strong></p>
+<blockquote>
+<p>İleride 1 bit veri saklama için kullanacağımız VE-VEYA Mandalı devresi Karnaugh Haritası ile yapılan sadeleştirme ile sadece 3 tane kapıdan oluşmakta.)</p></blockquote>
+<p><strong>Mantık Kapıları</strong> ve <strong>Doğruluk Tablosu</strong>’nu hallettiğimize göre bu yazıyı bitirebiliriz.</p>
+<p>Bir sonraki yazımız olan <a href="0-dan-ram-3-karnaugh-haritalari"><strong>0 → RAM | 3) Karnaugh Haritaları</strong></a>&rsquo;nda görüşmek üzere!</p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="https://eminfedar.github.io/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

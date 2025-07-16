@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ partial "header" . }}
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				<div class="mx-0">
+					{{ partial "face" .}}
+				</div>
+				<hr>
+				<div class="mx-0 chunk-sm posts">
+					<div class="row recent-articles">
+						<h4 class="justify-content-center some-weight col-auto" style="margin-bottom: 0px;">Son Yazılar
+						</h4>
+					</div>
+					{{ range (sort .Pages "Date" "desc") }}
+					{{ partial "globallist" . }}
+					{{ end }}
+					<div class="container">
+						<span class="justify-content-center row col-auto mx-0 chunk-sm">
+							<a class="col-auto more-links justify-content-center text-center"
+								href="{{ .Permalink }}{{ if .Site.Params.archive }}{{ .Site.Params.archive }}{{ else }}blog{{ end }}">
+								Tüm Yazılar
+							</a>
+						</span>
+					</div>
+				</div>
+
+				{{ partial "footer" . }}
+
+				<center><a rel="me"
+						href="https://sosyal.teknofest.app/@eminfedar"><small>sosyal.teknofest@eminfedar</small></a>
+				</center>
+			</div>
+		</div>
+	</div>
+	{{ end }}

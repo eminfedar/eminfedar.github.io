@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>blog on Emin Fedar | Kişisel Blog</title>
+    <link>https://eminfedar.github.io/tags/blog/</link>
+    <description>Recent content in blog on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Fri, 01 Mar 2019 22:00:00 +0000</lastBuildDate><atom:link href="https://eminfedar.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ben kimim?</title>
+      <link>https://eminfedar.github.io/blog/about/about/</link>
+      <category>blog</category><pubDate>Fri, 01 Mar 2019 22:00:00 +0000</pubDate>
+      
+      <guid>https://eminfedar.github.io/blog/about/about/</guid>
+      <description>&lt;p&gt;Normal bir insanım.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>HelloWorld on Emin Fedar | Kişisel Blog</title>
+    <link>http://localhost:1313/tags/helloworld/</link>
+    <description>Recent content in HelloWorld on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Sun, 01 Mar 2020 12:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/helloworld/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bismillah</title>
+      <link>http://localhost:1313/blog/bismillah/</link>
+      <category>HelloWorld</category>
+      <category>Demo</category>
+      <category>Markdown-Show</category><pubDate>Sun, 01 Mar 2020 12:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/bismillah/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Bismillâh&lt;/strong&gt; her hayrın başıdır. Biz dahi başta ona başlarız.&lt;/p&gt;
+&lt;p&gt;Bil ey nefsim!&lt;/p&gt;
+&lt;p&gt;Şu mübârek kelime &lt;strong&gt;İslâm nişanı&lt;/strong&gt; olduğu gibi, bütün mevcudâtın lisân-ı haliyle vird-i zebânıdır.&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;İşte, ey mağrur nefsim, sen o seyyahsın. Şu dünya ise bir çöldür. Aczin ve fakrın hadsizdir. Düşmanın, hâcâtın nihayetsizdir. Mâdem öyledir, şu sahrânın Mâlik-i Ebedîsi ve Hâkim-i Ezelîsinin ismini al. Tâ bütün kâinatın dilenciliğinden ve her hâdisâtın karşısında titremeden kurtulasın.&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Ey nefis! Böyle ebleh olmamak istersen; Allah nâmına ver, Allah nâmına al, Allah nâmına başla, Allah nâmına işle, vesselâm&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

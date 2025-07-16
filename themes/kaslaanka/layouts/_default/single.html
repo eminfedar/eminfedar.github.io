@@ -1,0 +1,100 @@
+{{ define "main" }}
+{{ partial "header" . }}
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				{{ if .Params.meta_img }}
+				<img width="100%" style="border-radius:11pt; box-shadow: 0 0 11pt lightgray;"
+					src="{{ .Params.meta_img }}" />
+				<br>
+				{{ end }}
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							{{ .Title }}
+						</span>
+						{{ if not .Params.noauthor }}
+						{{ if .Params.author }}
+						<br>
+						<span class="meta-data" title="{{ .Params.Author }}">
+							{{ .Params.author }}
+						</span>
+
+						{{ end }}
+						{{ end }}
+						<span class="date middot meta-data" title='{{ .Date.Format "Mon Jan 2 2006 15:04:05 MST" }}'>
+							{{ .Date.Format (.Site.Params.dateform | default "2006-01-02") }}
+						</span>
+						<span class="reading-time middot meta-data">
+							{{ .ReadingTime }} min read
+						</span>
+						{{ if .Params.edits }}
+						<span class="middot meta-data">
+							edit count: {{ .Params.edits }}
+						</span>
+						{{ end }}
+						{{ if .Params.unlisted }}
+						<span class="middot meta-data">
+							unlisted
+						</span>
+						{{ end }}
+
+						<a class="middot meta-data" href="{{ .Permalink | absURL }}">Permalink</a>
+
+						<span class="middot"></span>
+
+						{{ range .Params.tags}}
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="{{$.Site.BaseURL | replaceRE " /$" "" }}{{ "tags/" | relLangURL }}{{ . | urlize
+								}}">
+								#{{ . }}
+							</a>
+						</li>
+						{{ end }}
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					{{ partial "content" . }}
+				</div>
+				{{ if .Site.Params.posts_navigation }}
+				<div class="navigation">
+					<div class="row">
+						<div class="col-12 col-lg-6">
+							{{ if .PrevInSection }}
+							<div class="mx-0 mx-md-4 mt-4 text-left">
+								<a href="{{ .PrevInSection.Permalink }}">« {{ .PrevInSection.Title }}</a>
+							</div>
+							{{ end }}
+						</div>
+						<div class="col-12 col-lg-6">
+							{{ if .NextInSection }}
+							<div class="mx-0 mx-md-4 mt-4 text-right">
+								<a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} »</a>
+							</div>
+							{{ end }}
+						</div>
+					</div>
+				</div>
+				{{ end }}
+			</div>
+			{{ partial "footer" . }}
+		</div>
+	</div>
+</div>
+{{ end }}

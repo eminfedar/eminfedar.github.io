@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>plymouth on Emin Fedar | Kişisel Blog</title>
+    <link>https://eminfedar.github.io/tags/plymouth/</link>
+    <description>Recent content in plymouth on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Wed, 12 Aug 2020 22:00:00 +0000</lastBuildDate><atom:link href="https://eminfedar.github.io/tags/plymouth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Plymouth Tema Oluşturma Rehberi</title>
+      <link>https://eminfedar.github.io/blog/linux/plymouth-rehberi/</link>
+      <category>linux</category>
+      <category>plymouth</category><pubDate>Wed, 12 Aug 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://eminfedar.github.io/blog/linux/plymouth-rehberi/</guid>
+      <description>&lt;p&gt;Merhabalar, bu yazıda Pardus gibi GNU/Linux sistemlerde sistem boot olurken karşınıza çıkan ekranı tasarlayacağız.&lt;/p&gt;
+&lt;h1 id=&#34;1-kurulum&#34;&gt;1. Kurulum:&lt;/h1&gt;
+&lt;p&gt;Plymouth&amp;rsquo;u bilgisayarınız açıkken test edebilmek için aşağıdaki paketi sisteminize kurun: (debian)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install plymouth-x11
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tema-klasörü-örneği&#34;&gt;Tema klasörü örneği:&lt;/h2&gt;
+&lt;p&gt;Temalar &lt;code&gt;/usr/share/plymouth/themes/&lt;/code&gt; dizininde bulunur.&lt;/p&gt;
+&lt;p&gt;Basit bir tema aşağıdaki dosyalardan oluşur:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tema/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── tema.plymouth
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;├── tema.script
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;tema.plymouth&lt;/strong&gt; dosyası Plymouth&amp;rsquo;un tema hakkında bilgi edindiği dosyadır.&lt;/p&gt;
+&lt;p&gt;Örnek bir &lt;strong&gt;.plymouth&lt;/strong&gt; dosyası:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Plymouth Theme]
+Name=Ornek bir Plymouth Temasi
+Description=Bu temada sunlar sunlar vardir.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/tema
+ScriptFile=/usr/share/plymouth/themes/tema/tema.script
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ImageDir&lt;/strong&gt;: Temada kullanacağımız fotoğrafların kaynağı olan dizin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ScriptFile&lt;/strong&gt;: Temanın kodlarını yazacağımız dosya.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Örnek bir &lt;strong&gt;.script&lt;/strong&gt; dosyası:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

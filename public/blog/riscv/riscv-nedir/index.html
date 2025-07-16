@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> RISC-V Nedir? - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="https://eminfedar.github.io/blog/riscv/riscv-nedir/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="RISC-V Nedir?">
+  <meta property="og:description" content="Merhabalar, bu yazıda RISC-V(risk fayf)‘ı ele alacağız.
+Ama RISC-V’tan bahsetmeden önce “RISC ne ola ki 5. sürümü çıkmış” bir onu açıklığa kavuşturalım:
+RISC nedir? RISC, Reduced Instruction Set Computer, yani İndirgenmiş Komut Seti Bilgisayarı bir işlemci mimari çeşididir.
+Bir başka işlemci mimari çeşidi ise CISC, Complex Instruction Set Computer yani Karmaşık Komut Seti Bilgisayarı diye.
+Bunlar arasındaki farkı kısaca ele alırsak:
+CISC işlemciler bir komut gerçekleştirmek için birden fazla clock cycle kullanabilir. Örneğin aşağıdaki Assembly komutunu ele alalım:">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-10-10T22:00:00+00:00">
+    <meta property="article:modified_time" content="2020-10-10T22:00:00+00:00">
+    <meta property="article:tag" content="risc-v">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="RISC-V Nedir?">
+    <meta name="twitter:description" content="">
+    
+
+    <meta name="twitter:image" content="https://eminfedar.github.io//images/riscv/yunsup_lee_holding_risc_v_prototype_chip.jpg">
+    <link rel="canonical" href="https://eminfedar.github.io/blog/riscv/riscv-nedir/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="https://eminfedar.github.io/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="https://eminfedar.github.io/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+				<img width="100%" style="border-radius:11pt; box-shadow: 0 0 11pt lightgray;"
+					src="/images/riscv/yunsup_lee_holding_risc_v_prototype_chip.jpg" />
+				<br>
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							RISC-V Nedir?
+						</span>
+						
+						
+						<br>
+						<span class="meta-data" title="Emin Fedar">
+							Emin Fedar
+						</span>
+
+						
+						
+						<span class="date middot meta-data" title='Sat Oct 10 2020 22:00:00 UTC'>
+							2020/10/10
+						</span>
+						<span class="reading-time middot meta-data">
+							5 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="https://eminfedar.github.io/blog/riscv/riscv-nedir/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="https://eminfedar.github.io//tags/risc-v">
+								#risc-v
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<p>Merhabalar, bu yazıda <strong>RISC-V</strong>(risk fayf)&lsquo;ı ele alacağız.</p>
+<p>Ama RISC-V&rsquo;tan bahsetmeden önce &ldquo;<strong>RISC</strong> ne ola ki 5. sürümü çıkmış&rdquo; bir onu açıklığa kavuşturalım:</p>
+<h1 id="risc-nedir">RISC nedir?</h1>
+<p><strong>RISC</strong>, Reduced Instruction Set Computer, yani <strong>İndirgenmiş Komut Seti Bilgisayarı</strong> bir işlemci mimari çeşididir.</p>
+<p>Bir başka işlemci mimari çeşidi ise <strong>CISC</strong>, Complex Instruction Set Computer yani <strong>Karmaşık Komut Seti Bilgisayarı</strong> diye.</p>
+<p><strong>Bunlar arasındaki farkı kısaca ele alırsak:</strong></p>
+<p>CISC işlemciler bir komut gerçekleştirmek için birden fazla clock cycle kullanabilir. Örneğin aşağıdaki Assembly komutunu ele alalım:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#a6e22e">MULT</span> <span style="color:#66d9ef">adres1</span>, <span style="color:#66d9ef">adres2</span>
+</span></span></code></pre></div><p>Bu komut Multiplication yani Çarpma işlemini temsil ediyor. RAM&rsquo;deki adres2&rsquo;de tutulan sayıyı adres1&rsquo;de tutulan sayı ile çarpıp adres1&rsquo;e kaydediyor.</p>
+<p>Gördüğünüz gibi tek bir işlemci komutu ile A ve B&rsquo;yi çarpıp A&rsquo;ya yazabiliyoruz. Bunun C dilindeki karşlığı aşağıdaki gibi olacaktır:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// a RAM&#39;de adres1&#39;de tutulsun
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// b RAM&#39;de adres2&#39;de tutulsun
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>a <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b
+</span></span></code></pre></div><p><strong>CISC</strong>&rsquo;te tek bir komutla yazılan <strong>MULT</strong> işlemi aslında birkaç işlemci döngüsüyle gerçekleşir.</p>
+<p>Örneğin MULT komutu 4 cycle(çevrim) gerektirsin ve bizim elimizde 4 Hz&rsquo;lik bir işlemcimiz olsun.</p>
+<p>Bu durumda MULT komutu tek bir komut olmasına rağmen, 4 cycle sonra sona ereceği için 1 saniyede ancak 1 tane MULT komutu çalıştırabiliriz.</p>
+<h3 id="peki-bu-durum-riscte-nasıl">Peki bu durum RISC&rsquo;te nasıl?</h3>
+<p>RISC&rsquo;te ise bütün komutlar 1 cycle&rsquo;da biter.</p>
+<p>Aynı Multiplication işlemini RISC&rsquo;te gerçekleştirmek için 4 komuta ihtiyacımız var:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-asm" data-lang="asm"><span style="display:flex;"><span><span style="color:#a6e22e">lw</span>  <span style="color:#66d9ef">a0</span>, <span style="color:#ae81ff">0xA0</span>    <span style="color:#75715e">; Load Word (a0 register&#39;ına 0xA0&#39;daki değeri yükle)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">lw</span>  <span style="color:#66d9ef">a1</span>, <span style="color:#ae81ff">0xB0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mul</span> <span style="color:#66d9ef">a0</span>, <span style="color:#66d9ef">a0</span>, <span style="color:#66d9ef">a1</span>  <span style="color:#75715e">; a0 ile a1&#39;i çarpıp a0&#39;a yaz.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">sw</span>  <span style="color:#ae81ff">0xA0</span>, <span style="color:#66d9ef">a0</span>    <span style="color:#75715e">; Store Word (a0&#39;daki değeri 0xA0 adresine kaydet)
+</span></span></span></code></pre></div><p>Şimdi diyebilirsiniz ki:</p>
+<blockquote>
+<p>Eee, toplam yine 4 cycle tuttu? Ne olayı var yani bunun?</p></blockquote>
+<p>Öyleyse RISC&rsquo;in CISC&rsquo;e göre farklarına bir göz atalım:</p>
+<h2 id="riscin-cisce-göre-artıları">RISC&rsquo;in CISC&rsquo;e göre artıları</h2>
+<table>
+  <thead>
+      <tr>
+          <th>RISC ++</th>
+          <th>CISC  &ndash;</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Tek çevrimde gerçekleşen basit komutlar, donanımsal olarak daha az transistör ile gerçekleştirilir</td>
+          <td>Kompleks komutları icra eden donanımlar daha fazla transistör gerektirir ve karmaşık bir mimariye sahiptir</td>
+      </tr>
+      <tr>
+          <td>Her komut tek çevrimde gerçekleştiği için Pipelining mümkündür</td>
+          <td>Komutlar farklı çevrimlerde bittiği için Pipelining zorlaşır</td>
+      </tr>
+      <tr>
+          <td>Az sayıda işlemci komutu ile tüm işlemler gerçekleştirilir. Sade ve kolay bir Instruction Set&rsquo;e sahiptir</td>
+          <td>Çok fazla farklı işlemci komutu vardır ve Instruction Set&rsquo;i karmaşıktır</td>
+      </tr>
+      <tr>
+          <td>Komutlar basit olduğu için donanımsal olarak gerçeklenirken basittirler ve az yer kaplarlar.</td>
+          <td>Komutlar karmaşık olduğu için donanımsal yapılar karmaşık ve çok yer kaplar</td>
+      </tr>
+      <tr>
+          <td>Transistör sayısı az ve donanımı basit olduğu, çalışma frekansı da düşük olduğu için çok daha az enerji tüketir (4-5W)</td>
+          <td>Yüksek enerji tüketimi (90-100W)</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Pipelining:</strong> <a href="https://en.wikipedia.org/wiki/Instruction_pipelining">https://en.wikipedia.org/wiki/Instruction_pipelining</a>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pipeline%2C_4_stage.svg/1024px-Pipeline%2C_4_stage.svg.png" alt="Pipelining"></p>
+<h2 id="riscin-cisce-göre-eksileri">RISC&rsquo;in CISC&rsquo;e göre eksileri</h2>
+<table>
+  <thead>
+      <tr>
+          <th>RISC &ndash;</th>
+          <th>CISC ++</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Derleyici güçlü ve gelişmiş olmalıdır, karmaşık kodları indirgenmiş temel komutlara çevirebilmelidir</td>
+          <td>Derleyicinin işi kolaydır çünkü karmaşık işlemlerin direkt olarak donanımsal karşılıkları vardır</td>
+      </tr>
+      <tr>
+          <td>Daha fazla RAM tüketir</td>
+          <td>Daha az RAM tüketir</td>
+      </tr>
+      <tr>
+          <td>Daha fazla kod boyutu kaplar (aynı işi yapmak için CISC&rsquo;te 1, RISC&rsquo;te 4 satır kod yazdık, bu da RISC için derlenen program diskte 3 kelime daha fazla yer kaplar demek)</td>
+          <td>Daha düşük kod boyutu kaplar</td>
+      </tr>
+      <tr>
+          <td>Daha düşük frekanslarda çalışır (1-2.5 GHz) (şimdilik?)</td>
+          <td>Daha yüksek frekanslarda çalışır (4-5 GHz)</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Eskiden işlemciler oldukça sınırlı RAM ve hafıza ile çalıştıklarından CISC mimarisi biraz daha fazla ön plandaydı. <br>
+Fakat günümüzde RAM ve hafıza bellek boyutları oldukça yüksek olduğu için RISC&rsquo;in enerji verimliliği ve performansı onu daha çok ön plana çıkıyor.</p></blockquote>
+<p>Özetle derleyicileriniz biraz daha gelişmiş ise, RAM ve hafıza bellek kaynağı sıkıntınız yok ise RISC daha avantajlı diyebiliriz.</p>
+<h1 id="risci-anladık-peki-risc-v-nedir">RISC&rsquo;i anladık. Peki RISC-V nedir?</h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/RISC-V-logo.svg/1920px-RISC-V-logo.svg.png" alt="RISC-V Logo"></p>
+<p><strong>RISC-V</strong>(risk-fayf) RISC prensiplerini kullanan açık kaynak bir <strong>Komut Seti Mimarisidir(ISA)</strong>.</p>
+<p>İşlemcilerini CISC mantığı ile yapan firmalara örnek olarak AMD ve Intel&rsquo;i verebiliriz. İşlemcilerini RISC mantığı ile yapan firmalara örnek ise ARM verilebilir.</p>
+<p>Bu firmalar oluşturdukları ISA&rsquo;ler ile işlemci üretmek isteyen başka firmalara belirli bir lisans ücreti karşılığında izin verirler.</p>
+<p>Örneğin Intel&rsquo;in x86 işlemci mimarisi hoşunuza gitti ve siz de aynı protokolü kullanarak komut işleyen ve donanımlar ile haberleşen işlemcinizi yapmak istiyorsunuz. Bunun için Intel&rsquo;den izin alıp belirli bir lisans parası ödeyerek işlemcinizi yapabilirsiniz.</p>
+<p>Aynı şey ARM için de geçerli. Bugün ARM mimarilerini kullanarak işlemci üreten firmalar (Qualcomm, Broadcom, STM vb.) ARM şirketine lisans parası ödemek zorundalar. Mesela telefonunuzdaki Snapdragon bilmem kaç işlemcisi için Qualcomm ARM&rsquo;a lisans parası ödüyor.</p>
+<p><strong>İşte RISC-V burada devreye giriyor!</strong></p>
+<p>University of California Berkeley&rsquo;in oluşturduğu ve herkese açık (ister kişisel, ister ticari, ister akademik) bir ISA olan RISC-V, herhangi bir lisans parası ödemeden herkesin ortak kabul ettiği bir mimaride işlemci üretebilmenizi sağlıyor.</p>
+<p>Sadece bununla da kalmıyor, aynı zamanda RISC-V işlemcilerinin çoğunun iç tasarımları herkese açık olarak paylaşılmış durumda: <a href="https://github.com/riscv/riscv-cores-list">https://github.com/riscv/riscv-cores-list</a></p>
+<blockquote>
+<p>Peki ben RISC-V mimarisiyle çalışan bir işlemci tasarlarsam bunu açık kaynak olarak paylaşmak zorunda mıyım? <br></p></blockquote>
+<p>Hayır. İsterseniz paylaşmayabilirsiniz de, tamamen size bağlı.</p>
+<h2 id="risc-vnin-geleceği">RISC-V&rsquo;nin geleceği</h2>
+<p>RISC-V 2018-2020 yıllarında büyük bir ivme yakalamış durumda. Bugün içlerinde <strong>Türkiye&rsquo;den ASELSAN ve SystemPark</strong> firmalarının da bulunduğu <em>(as bayrakları 🇹🇷)</em> 100&rsquo;den fazla stratejik ve iş ortakları mevcut:
+<a href="https://riscv.org/membership/members/">https://riscv.org/membership/members/</a></p>
+<p>Mesela <strong>NVIDIA</strong>, yeni yapacağı işlemcilerde RISC-V&rsquo;a geçeceğini duyurmuştu. Aynı zamanda RISC-V için grafik ve yapay zeka hızlandırıcıları(NVDLA) üzerine çalışıyor.</p>
+<p><strong>Alibaba group</strong> şirketi 2.5GHz ile çalışan 16 çekirdekli RISC-V işlemcisini (XuanTie C910) 2019 yılında duyurmuştu.</p>
+<p><strong>Canaan</strong> şirketinin <a href="https://canaan.io/product/kendryteai">Kendryte K210</a> işlemcisi ile 0.3W enerji ile saniyede 60 kare yüz tanıma yapabilen uygulamalar geliştirebiliyorsunuz.</p>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fapplexgen.com%2Fwp-content%2Fuploads%2F2020%2F03%2FXuantie-910-procesador-16-n%25C3%25BAcleo-con-arquitectura-RISC-V-de-Alibaba.jpg" alt=""></p>
+<p>Ve daha niceleri&hellip;</p>
+<h2 id="türkiye-risc-v-mimarisini-temel-alarak-kendi-işlemcisini-üretebilir-mi">Türkiye RISC-V mimarisini temel alarak kendi işlemcisini üretebilir mi?</h2>
+<p>Bu sorunun cevabını iki şirketimizin RISC-V&rsquo;a sponsor ve ortak olduğunu düşünerek mutlulukla <strong>EVET</strong> demek istiyorum :).</p>
+<p>ASELSAN <strong>Çakıl</strong> adında bir işlemci üzerine çalıştığını zaten duyurmuştu. <a href="https://systempark.io">SystemPark Savunma</a> ve <a href="https://deepcontrol.net">DeepControl Teknoloji</a> şirketleri de ortaklaşa yapay zeka geliştirmeleri için RISC-V işlemcili bir geliştirme kartı ve işlemci mimarisi çalışmaya başladı. Ben de bu ekibin bir parçası olarak destek vermeye devam ediyorum.</p>
+<p>Türkiye otomobil sektörünü <strong>Elektrikli otomobil çağına geçiş</strong> esnasında yakaladığı gibi, işlemci sektöründe de <strong>RISC-V</strong> ile global pazarda bir yer yakalayabilir.</p>
+<p>Ayrıca Üniversitelerimizin de x86, PIC veya ARM yerine akademik camiaya da uygun olan RISC-V ile derslerini şekillendirmeleri bu ivmelenmemizi büyük oranda hızlandıracaktır. Çok uzak olmayan gelecekte Türkiye&rsquo;de işlemci firmaları görebiliriz :)</p>
+<p>Duamız odur ki ülkemizde güzel işlere imza atılsın. Bekleyip hep birlikte göreceğiz :)</p>
+<p>Umutla, şevkle ve azim ile kalın</p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="https://eminfedar.github.io/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

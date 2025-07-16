@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Sıfırdan İşlemci | 0) İşlemci mimarisi ve RISC-V - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="http://localhost:1313/riscv/0-riscv-mimarisi/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="Sıfırdan İşlemci | 0) İşlemci mimarisi ve RISC-V">
+  <meta property="og:description" content="Merhabalar, bu seride birlikte RISC-V Komut Setini işleyebilen Tek çekirdekli, Tek çevrimli ve 32 Bit bir işlemci tasarlayacağız.
+Daha sonra da bu işlemcimizi Pipelined hale getirip performansını arttıracağız.
+Seriye başlamadan önce gereksinimler Mantık Devreleri bilgisi İkili (Binary) sistemler ve aritmetiği Basit elektrik bilgisi (kabloları birbirine bağlama :)) Yanmaya hazır bir beyin 🤯 Hazırsanız başlayalım!
+İşlemci nasıl çalışır? Bir bilgisayar temel olarak iki birimden oluşur: İşlemci ve RAM(Bellek)">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="riscv">
+    <meta property="article:published_time" content="2020-10-19T23:00:00+00:00">
+    <meta property="article:modified_time" content="2020-10-19T23:00:00+00:00">
+    <meta property="article:tag" content="islemci-tasarimi">
+    <meta property="article:tag" content="risc-v">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="Sıfırdan İşlemci | 0) İşlemci mimarisi ve RISC-V">
+    <meta name="twitter:description" content="">
+    
+
+    <meta name="twitter:image" content="http://localhost:1313//images/riscv/sifirdan-islemci-0.jpg">
+    <link rel="canonical" href="http://localhost:1313/riscv/0-riscv-mimarisi/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="http://localhost:1313/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+				<img width="100%" style="border-radius:11pt; box-shadow: 0 0 11pt lightgray;"
+					src="/images/riscv/sifirdan-islemci-0.jpg" />
+				<br>
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							Sıfırdan İşlemci | 0) İşlemci mimarisi ve RISC-V
+						</span>
+						
+						
+						<br>
+						<span class="meta-data" title="Emin Fedar">
+							Emin Fedar
+						</span>
+
+						
+						
+						<span class="date middot meta-data" title='Mon Oct 19 2020 23:00:00 UTC'>
+							2020-10-19
+						</span>
+						<span class="reading-time middot meta-data">
+							6 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="http://localhost:1313/riscv/0-riscv-mimarisi/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="http://localhost:1313//tags/islemci-tasarimi">
+								#islemci-tasarimi
+							</a>
+						</li>
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="http://localhost:1313//tags/risc-v">
+								#risc-v
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8q-Oz_DO4Mw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Merhabalar, bu seride birlikte RISC-V Komut Setini işleyebilen Tek çekirdekli, Tek çevrimli ve 32 Bit bir işlemci tasarlayacağız.</p>
+<p>Daha sonra da bu işlemcimizi <a href="https://en.wikipedia.org/wiki/Instruction_pipelining">Pipelined</a> hale getirip performansını arttıracağız.</p>
+<h2 id="seriye-başlamadan-önce-gereksinimler">Seriye başlamadan önce gereksinimler</h2>
+<ul>
+<li><strong>Mantık Devreleri</strong> bilgisi</li>
+<li>İkili <em>(Binary)</em> sistemler ve aritmetiği</li>
+<li>Basit elektrik bilgisi (kabloları birbirine bağlama :))</li>
+<li>Yanmaya hazır bir beyin 🤯</li>
+</ul>
+<blockquote>
+<p><strong>Hazırsanız başlayalım!</strong></p></blockquote>
+<h2 id="işlemci-nasıl-çalışır">İşlemci nasıl çalışır?</h2>
+<p>Bir bilgisayar temel olarak iki birimden oluşur: <strong>İşlemci ve RAM(Bellek)</strong></p>
+<p>RAM işlemcinin <strong>yazıp okuyabildiği</strong> bir bellektir. İşlemcinin temelde yaptığı aslında RAM bellekteki komutları okuyup işlemek ve yine RAM belleğe değerler kaydetmektir. Mesela gerçek hayatta şöyledir:</p>
+<p>Bir programı açarsınız, işletim sistemi işlemcinin çalıştıracağı program önce kalıcı bellekten(Disk) geçici belleğe(RAM) birebir kopyalar.</p>
+<p>İşlemci RAM&rsquo;e kopyalanmış komutları yani programı sırayla okumaya ve çalıştırmaya başlar.</p>
+<p>İşlemcide hangi işlemin gerçekleşeceği RAM&rsquo;de okunan <strong>&ldquo;Instruction(Komut)&rdquo;</strong>&lsquo;ın ne olduğuna bağlıdır. Bu komutlar RAM&rsquo;de saklanabilen sayılardan ibarettir, işlemcide manalandırılıp hesaplamalar yapılır.</p>
+<h2 id="ramdeki-0lar-ve-1ler-nasıl-bir-komut-ifade-edebiliyor">RAM&rsquo;deki 0&rsquo;lar ve 1&rsquo;ler nasıl bir komut ifade edebiliyor?</h2>
+<p>Örneğin kendimiz bir <strong>Instruction Set</strong>(Komut Seti) uyduralım:</p>
+<p>4 tane komutumuz olsun:</p>
+<ol start="0">
+<li>TOPLA</li>
+<li>ÇIKAR</li>
+<li>KAYDET</li>
+<li>OKU</li>
+</ol>
+<p>Bu komutları işlemcide işleyebilmek için aynı yukarıdaki gibi numaralandıralım. Böylece hangi işlemi yapmamız gerektiğini bilmek için 2 tane bit işimizi görecektir:</p>
+<ul>
+<li>00 = 0</li>
+<li>01 = 1</li>
+<li>10 = 2</li>
+<li>11 = 3</li>
+</ul>
+<p>Peki, ilk 2 bit komutun tipini belirtiyor. Şimdi işlenecek değerleri de komutumuza ekleyelim. Yani &ldquo;TOPLA&rdquo; ya da &ldquo;ÇIKAR&rdquo; ama hangi iki sayıyı? :)</p>
+<p>Topla ve Çıkar işlemleri için <strong>8 bitlik 2 sayıyı</strong> da komutumuza ekleyelim. Bir komut şuan 18 Bit ( 2 + 8 + 8 ) genişliğinde oldu.</p>
+<h3 id="şimdi-bu-komut-setiyle-2--2-işlemini-yapmak-isteyelim">Şimdi bu komut setiyle &ldquo;2 + 2&rdquo; işlemini yapmak isteyelim:</h3>
+<p>= TOPLA 2, 2 <br>
+= 00 00000010 00000010 <br>
+= <strong>000000001000000010</strong> &lt;- İşte bizim komutumuz.<br></p>
+<blockquote>
+<p>Sadece 0 ve 1&rsquo;lerden oluşan bu sayı aslında 2 ile 2 sayısını toplamayı ifade eden bir komut: <strong>000000001000000010</strong></p></blockquote>
+<p>Mesela <strong>&ldquo;2 - 2&rdquo;</strong> işlemini yapmak isteseydik şöyle bir komutumuz olacaktı:</p>
+<p>= ÇIKAR 2, 2 <br>
+= 01 00000010 00000010 <br>
+= <strong>010000001000000010</strong> <br></p>
+<h3 id="iyi-de-bu-topladıklarımızın-sonucu-nerede-tutuluyor">İyi de bu topladıklarımızın sonucu nerede tutuluyor?</h3>
+<p>Güzel soru! 2 + 2&rsquo;yi yaptık fakat 4&rsquo;ü nerede saklayacağız?</p>
+<p>İşte burada <strong>&ldquo;Registers(Kaydediciler)&rdquo;</strong> devreye giriyor.</p>
+<h2 id="registerkaydedici-nedir">Register(Kaydedici) nedir?</h2>
+<p>Registerlar bir kelimelik <em>(Genelde işlemcinin bit sayısıdır)</em> veri tutan belleklerdir.</p>
+<p>Yapıları basittir, 1 tane D-Tipi Flip-Flop ile 1 bitlik bir Register elde edebilirsiniz. Yani 32 bitlik bir register için 32 tane D-Tipi Flip-Flop kullanabiliriz.</p>
+<p>İşlemcimiz 32 bit olacağına göre registerlarımız da 32 bit olacaktır.</p>
+<p>Şimdi komutlarımıza bir de hangi registerda tutulacakları bilgisini de ekleyelim. Örneğin 4 tane registerımız olsun. Yine 2 bit ile bu 4 registeri gösterebiliriz.</p>
+<blockquote>
+<p>Komutumuz toplam 20 bit oldu:
+Komut Tipi[2] + Sayı[8] + Sayı[8] + Register[2] = 20 Bit</p></blockquote>
+<p>Registerlarımızın sırası şöyle olsun:</p>
+<ol start="0">
+<li>r0</li>
+<li>r1</li>
+<li>r2</li>
+<li>r3</li>
+</ol>
+<p><strong>Artık TOPLA komutumuza sonucu nereye yazacağını da ekleyebiliriz:</strong></p>
+<p>= TOPLA 2, 2, r0 <br>
+= 00 00000010 00000010 00 <br>
+= <strong>00000000100000001000</strong></p>
+<p>İşte karşınızda 2 ile 2&rsquo;yi toplayıp 0. Registera kaydetme işlemini simgeleyen komut: <strong>00000000100000001000</strong>!</p>
+<p>İşlemcimiz(eğer bu komut setini işleyen bir işlemci yapmış olsaydık) RAM&rsquo;i kelime kelime okuyup (örneğin 32 bit) bizim komutumuzu parametrelerine ayırıp işleyecekti. Mesela ilk iki bite göre toplama mı çıkarma mı yapacağına karar veren bir devreye sahip olacaktı.</p>
+<h3 id="komutların-ramde-nasıl-tutulduğunu-anladık-peki-işlemci-bu-komutları-nasıl-işliyor">Komutların RAM&rsquo;de nasıl tutulduğunu anladık, peki işlemci bu komutları nasıl işliyor?</h3>
+<p>Öncelikle işlemcimizin yaptığı işlemleri genel olarak belirleyelim.</p>
+<p>İşlemcimiz bir çevrim çalışmak için 4 işlemi sırayla yapar:</p>
+<blockquote>
+<p>FETCH → DECODE → EXECUTE → WRITE BACK</p></blockquote>
+<ol>
+<li><strong>FETCH</strong>: Yani &ldquo;Getir&rdquo;. <br>İşlemcinin ilk işi RAM&rsquo;deki sıradaki komutu okumak.</li>
+<li><strong>DECODE</strong>: Yani &ldquo;Çöz&rdquo;. <br>Getirdiği komutu parametrelerine ayırıp ne komutu olduğunu &ldquo;çözdüğü&rdquo; aşama.</li>
+<li><strong>EXECUTE</strong>: Yani &ldquo;Çalıştır&rdquo;. <br>Her şeyini bildiğimiz komutun geriye sadece çalıştırılması kalıyor. Yani komutun &ldquo;TOPLA, 2, 2, r0&rdquo; olduğunu anladık, burası 2 ve 2&rsquo;yi ALU&rsquo;da topladığımız kısım.</li>
+<li><strong>WRITE BACK</strong>: Yani &ldquo;Geri yaz&rdquo;. <br>2 + 2 = &ldquo;4&rdquo; sonucunu &ldquo;r0&quot;a yazdığımız kısım.</li>
+</ol>
+<p>Bu 4 aşama bittiğinde işlemcimiz 1 cycle(çevrim) çalışmış oluyor.</p>
+<blockquote>
+<p>Bir Komut Seti nasıl oluşturuluyor ve işlemci nasıl çalışıyor basit bir şekilde öğrenmiş olduk. Şimdi sıra hayali komut setimizi bir kenara bırakıp gerçekten işlemcimizi üzerine bina edeceğimiz RISC-V Komut Setini ele alalım.</p></blockquote>
+<h2 id="risc-v-komut-setini-inceleyelim">RISC-V Komut Setini inceleyelim</h2>
+<p>RISC-V Komut seti RISC prensipleriyle hazırlanmış, devresini kurmak için gayet az sayıda eleman ve bağlantı gerektiren, tasarruf açısından verimli olması için akıllıca tasarlanmış bir komut setidir.</p>
+<p>Ayrıca açık kaynaktır. İsteyen herkes RISC-V komut setini işleyen işlemcileri üretip bastırabilir.</p>
+<p>Biz de RISC-V komut setini işleyen bir işlemci yapacağız. Bu yüzden komutları kolayca işleyebilmek için sınıflarına ayıralım, ki zaten bu düşünülerek tasarlanmış bir komut seti olduğundan tipleri bizim kolayca DECODE etmemiz için hazır.</p>
+<h3 id="komut-tipleri">Komut Tipleri:</h3>
+<p><img src="/images/riscv/riscv-instructions.png" alt="RISC-V Komut Tipleri"></p>
+<p>RISC-V Komut Seti temel olarak 6 adet komut tipi içerir:</p>
+<ol>
+<li>R-Tip: <strong>Register-Register</strong> komutlarıdır. İşlemler Register&rsquo;dan alınıp Register&rsquo;a yazılır.</li>
+<li>I-Tip: <strong>Immediate</strong>(Direkt Değerli) komutlarıdır. İşlemler Sayı-Register olarak işlenir. Mesela r0&rsquo; registerine 5 sayısını eklemek komutu. Sabit sayı için ayrılan bit sayısı 12&rsquo;dir.</li>
+<li>U-Tip: <strong>Upper Immediate</strong> komutlarıdır. I-Tip ile aynıdır sadece sabit sayı için 20 bit ayrılmıştır. Örneğin 32 bitlik bir sabit sayı ile işlem yapmak tek başına I veya U tip yetmeyeceği için ilk 12 biti için I-Tip, sonraki yüksek değerlikli 20 biti için U-Tip komut çağrılır.</li>
+<li>S-Tip: <strong>Store</strong>(Kayıt) komutlarıdır. RAM&rsquo;e değer kaydetmek için kullanılır.</li>
+<li>B-Tip: <strong>Branch</strong>(Dallanma) komutlarıdır. Registerların birbirine göre durumları baz alınarak programda başka bir yere dallanmak için kullanılır.</li>
+<li>J-Tip: <strong>Jump</strong>(Atlama) komutlarıdır. Koşulsuz olarak programda başka bir yere atlamak için kullanılır.</li>
+</ol>
+<h3 id="rv32im-komut-seti">RV32IM Komut Seti:</h3>
+<p><img src="/images/riscv/riscv-isa.png" alt="RISC-V Komut Seti"></p>
+<p>Bizim devrelerini kuracağımız komut seti yukarıdaki RV32IM komut setidir.
+(RV32I ve diğer tüm opcode&rsquo;lar için: <a href="https://github.com/riscv/riscv-opcodes/blob/master/opcodes-rv32i">https://github.com/riscv/riscv-opcodes/blob/master/opcodes-rv32i</a>)</p>
+<p>RISC-V&rsquo;ın 6 Temel çekirdek eklentisi(extension) var:</p>
+<ul>
+<li>I -&gt; <strong>Integer</strong>, temel komut spesifikasyonu. Tüm işlemcilerde ortak bulunur. Diğerleri opsiyoneldir.</li>
+<li>M -&gt; <strong>Multiplication</strong>, çarpma ve bölme işlemleri için.</li>
+<li>A -&gt; <strong>Atomic Operations</strong>, mutex, semafor gibi atomik değişken işlemleri için.</li>
+<li>F -&gt; <strong>Floating Point</strong>, ondalıklı sayılar için (32-bit)</li>
+<li>D -&gt; <strong>Double Precision Floating Point</strong>, ondalıklı sayılar için (64-bit)</li>
+<li>C -&gt; <strong>Compressed</strong>, temel komut spesifikasyonunun 16-bit&rsquo;e indirgenmiş sıkıştırılmış halini işleyen eklenti.</li>
+</ul>
+<blockquote>
+<p>IMAFD eklentilerinin bir arada bulunma hali &ldquo;G&rdquo; takısıyla isimlendirilir. Örneğin RV64IMAFDC bir işlemciye RV64GC denir. &ldquo;G&rdquo; takılı işlemciler işletim sistemi çalıştırabilirler. &ldquo;G&rdquo; olmayanlarda ise daha çok RTOS(Real-Time Operating System) kullanılır.</p></blockquote>
+<p>Komut seti yukarıdaki komut tiplerine uygun olarak hazırlanmış komutlardan oluşuyor. Bu tipleri ise başlarındaki OPCODE&rsquo;larından (ilk 7 bit) ayırt edebiliyoruz.</p>
+<p>Daha sonraki Kod[3] ve Kod[7] ise komut tipine sahip ayrı ayrı komutları simgeliyor. Örneğin 0x33 OPCODE = Register-Register komutları. Bu Register-Register komutlarından hangisini çalıştırmak istediğimiz ise Kod[3] ve Kod[7] gösteriyor.</p>
+<p>Örneğin:</p>
+<ul>
+<li><code>add rd, rs1, rs2</code> bir Register-Register komutu.</li>
+<li><code>sub rd, rs1, rs2</code> de öyle.</li>
+</ul>
+<p>Bu komutların ikisinin de OPCODE&rsquo;u aynı(0x33). Aralarındaki fark ise <strong>funct3</strong> ve <strong>funct7</strong> kodlarının farklı olması.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Komut</th>
+          <th>Kod[3]</th>
+          <th>Kod[7]</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>add</td>
+          <td>0x0</td>
+          <td>0x00</td>
+      </tr>
+      <tr>
+          <td>sub</td>
+          <td>0x0</td>
+          <td><strong>0x20</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>Gördüğünüz gibi <strong>OPCODE, Kod[3] ve Kod[7]</strong> üçlüsüyle komutları birbirinden ayırt ediyoruz.</p>
+<h3 id="peki-nasıl-bir-sistem-yapacağız-ona-bir-bakalım">Peki nasıl bir sistem yapacağız ona bir bakalım:</h3>
+<p><img src="/images/riscv/bilgisayar-sistem.png" alt="Bilgisayar Sistemi"></p>
+<p>Gördüğünüz üzere bir tane İşlemci, bir tane RAM&rsquo;imiz var. Basit bir bilgisayar için bu ikisi yeterlidir. İşlemci RAM&rsquo;den komutları(Instruction) okur, işler ve geri yazar. Geri kalan bütün şeyler ek olarak sonradan eklenir (klavye, ekran, fare gibi).</p>
+<p>Şimdilik böyle bir giriş yapmış olalım ve burada bırakalım. İşlemcimizin içini tasarlamaya <a href="http://cburch.com/logisim/index.html">Logisim</a> programıyla ikinci derste başlayacağız.</p>
+<hr>
+<p>Bir sonraki ders: <a href="/sifirdan-islemci-1-fetch">Sıfırdan İşlemci | 1) Fetch (Getir)</a></p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="http://localhost:1313/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

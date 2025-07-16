@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="tr-tr">
+
+<head>
+  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> 0 → RAM | 1) RAM Nedir? - Emin Fedar | Kişisel Blog </title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="referrer" content="no-referrer">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:locale" content="en_US">
+
+  <meta property="og:url" content="http://localhost:1313/0-dan-ram-1-ram-nedir/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="0 → RAM | 1) RAM Nedir?">
+  <meta property="og:description" content="Sıfırdan RAM tasarladığımız bir seri.">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2020-03-02T19:00:03+00:00">
+  <meta property="article:modified_time" content="2020-03-02T19:00:03+00:00">
+  <meta property="article:tag" content="RAM">
+
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="0 → RAM | 1) RAM Nedir?">
+  <meta name="twitter:description" content="Sıfırdan RAM tasarladığımız bir seri.">
+
+
+  <meta name="twitter:image" content="http://localhost:1313/">
+  <link rel="canonical" href="http://localhost:1313/0-dan-ram-1-ram-nedir/">
+
+  <link rel="stylesheet" href="/css/site.min.css">
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+</head>
+
+<body>
+
+  <div class="mt-xl header">
+    <header>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <a href="http://localhost:1313/" style="display: contents">
+              <h1 class="name text-center">eminfedar</h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-lg-8">
+          <h1 class="mx-0 mx-md-4 single-page-title">0 → RAM | 1) RAM Nedir?</h1>
+          <div class="markdown page-content">
+            <p>*serisinde sizlerle beraber <strong>sıfırdan</strong> kendi <strong>RAM</strong>’imizi tasarlayacağız. Bu
+              yazıda tasarıma hemen geçmesek de genel bir bilgi edinmek için okumanız faydalı olacaktır. Başarılar!</p>
+            <h3 id="ram-nedir">Ram Nedir?</h3>
+            <p><strong>R</strong>andom <strong>A</strong>ccess <strong>M</strong>emory, yani Rastgele Erişimli Bellek.
+            </p>
+            <p>“Rastgele Erişimli” denilmesinin sebebi bellekteki hafıza bölümlerine “kaotik” veya “neresi rast gelirse”
+              şeklinde erişmemiz değil.</p>
+            <p>İstediğimiz (yani herhangi bir, yani rastgele), hafıza bölümüne <strong>tek seferde</strong>
+              erişebildiğimiz için böyle tesmiye edilmiş.</p>
+            <p><img src="images/ram/rastgele-vs-sirali.gif"
+                alt="Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]">
+              <br> <em>Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]</em>
+            </p>
+            <h3 id="ram-ne-işe-yarar">Ram Ne İşe Yarar?</h3>
+            <p>İşlemcimizin en çok konuştuğu donanımlardan biri olan RAM, işlemciye lazım olacak <strong>veriler ve
+                komutları</strong> geçici olarak saklayan ve istenildiğinde de tekrar okumamızı sağlayan bir elektronik
+              devredir.</p>
+            <p>Mesela bilgisayarınızda bir program çalıştırdığınız zaman bu program <strong>kalıcı ve yavaş</strong>
+              bellekten okunarak (yani sabit diskinizden) <strong>geçici ve hızlı</strong> (yani RAM) belleğe aktarılır.
+              Daha sonra İşlemci bu programın RAM’de tutulan komutlarını tek tek okuyup çalıştırmaya başlar.</p>
+            <blockquote>
+              <p>Mesela a ile b’yi topla, RAM’de diğer bir adrese şu veriyi yaz, şu adresteki veriyi 1 arttır gibi
+                komutlar…</p>
+            </blockquote>
+            <p>İşlemcinin programları sabit diskinizden okuyup çalıştırmama sebebi okuma-yazma hızının çok düşük
+              olmasıdır.</p>
+            <blockquote>
+              <p>Örneğin ortalama bir <strong>RAM</strong> 15–20GB/s okuma-yazma hızına sahipken, ortalama bir
+                <strong>SSD</strong> 0.4–0.5GB/s hızlarında. ortalama bir <strong>HDD</strong> ise 0.02–0.03GB/s.</p>
+            </blockquote>
+            <p>Eğer sabit diskten çalıştırsa idi işlemci çok hızlı olmasına rağmen sabit diski sürekli beklemek zorunda
+              kalacaktı, böylece zaman kaybı had safhada olacaktı.</p>
+            <h3
+              id="rami-anladım-fakat-bir-veri-elektrik-ile-nasıl-saklanabilir-ki-sabit-disk-üzerindeki-kabartılar-ile-veriyi-kolayca-saklayabiliyor-elektrik-nasıl-saklanır">
+              “RAM’i anladım, fakat bir veri elektrik ile nasıl saklanabilir ki? Sabit disk üzerindeki kabartılar ile
+              veriyi kolayca saklayabiliyor. Elektrik nasıl saklanır?”</h3>
+            <p>Elektrik tek başına saklanabilen bir şey değil evet, ama basit devreler yardımıyla elektriği
+              saklayabiliyoruz.</p>
+            <p>Mesela “veri saklama” dediğimiz işini gerçekleştirebilen en basit devrelerden biri <strong>AND-OR
+                Latche</strong> yani <strong>Ve-Veya Mandalı</strong>’dır.</p>
+            <p>Bu ismin verilme sebebi sadece 1 VE ve 1 VEYA kapısıyla oluşturulabilmesidir. <em>(bir tane de DEĞİL
+                kapısı var aşağıda tabiki :))</em></p>
+            <p><img src="images/ram/ve-veya-mandali.gif" alt="1 bit veri saklayabilen AND-OR-Latche çalışma şekli"><em>1
+                bit veri saklayabilen AND-OR-Latche çalışma şekli</em></p>
+            <p>Bu devreyi Mantık Devreleri (veya Elektrik Devreleri) tasarlama programları aracılığıyla kendiniz de
+              tasarlayıp simüle edebilirsiniz. Ayrıca ilerideki tasarımlarımızı da kendi bilgisayarınızda gerçeklemek
+              için bu programlara ihtiyacınız olacak.</p>
+            <p>Kullanabileceğiniz zordan kolaya sıralı bazı bedava programlar:</p>
+            <ul>
+              <li>
+                <p><strong>Logisim</strong> (<a
+                    href="https://sourceforge.net/projects/circuit/">https://sourceforge.net/projects/circuit/</a>)
+                  *(Kapsamlılık: 15, Zorluk: 2) <em><strong>kullandığım</strong></em></p>
+              </li>
+              <li>
+                <p><strong>Logic Circuit</strong> (<a href="https://logiccircuit.org/">https://logiccircuit.org/</a>)
+                  <em>(Kapsamlılık: 10, Zorluk: 4)</em>
+                </p>
+              </li>
+              <li>
+                <p><strong>Logic Circuit Designer</strong> (<a
+                    href="https://sourceforge.net/projects/logiccircuitd/">https://sourceforge.net/projects/logiccircuitd/</a>)
+                  <em>(Kapsamlılık: 7, Zorluk: 2)</em>
+                </p>
+              </li>
+              <li>
+                <p><strong>Multimedia Logic</strong> (<a
+                    href="https://sourceforge.net/projects/multimedialogic/">https://sourceforge.net/projects/multimedialogic/</a>)
+                  <em>(Kapsamlılık: 4, Zorluk: 1)</em>
+                </p>
+              </li>
+            </ul>
+            <p>Bu devreyi nasıl oluşturacağımız, kapıların nasıl çalıştığı, doğruluk tabloları, karnaugh haritaları gibi
+              teknik meselelere artık başlayabiliriz sanırım.</p>
+            <p>Şimdilik bu kadar :)</p>
+            <p>Bir sonraki yazımız olan <strong><a href="0-dan-ram-2-mantik-kapilari">0 → RAM | 2) Mantık
+                  Kapıları</a></strong>&lsquo;ında görüşmek üzere!
+              ����������������������������������</p>
+
+
+          </div>
+        </div>
+        <hr class="footer-linebreak">
+        <div class="container">
+          <span class="row justify-content-center meta" id="footer">
+            Copyright © 2025 Emin Fedar
+            <center><a rel="me"
+                href="https://sosyal.teknofest.app/@eminfedar"><small>sosyal.teknofest@eminfedar</small></a>
+            </center>
+          </span>
+          <script defer src="http://localhost:1313/js/custom.js"></script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

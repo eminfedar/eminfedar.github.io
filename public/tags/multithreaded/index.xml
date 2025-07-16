@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>Multithreaded on Emin Fedar | Kişisel Blog</title>
+    <link>http://localhost:1313/tags/multithreaded/</link>
+    <description>Recent content in Multithreaded on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Fri, 12 Nov 2021 13:00:03 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/multithreaded/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Multithreaded Geliştirme</title>
+      <link>http://localhost:1313/rust-multithreaded-gelistirme-channels-atomic-mutex/</link>
+      <category>Rust</category>
+      <category>Multithreaded</category>
+      <category>Atomic</category>
+      <category>Mutex</category>
+      <category>Channels</category><pubDate>Fri, 12 Nov 2021 13:00:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/rust-multithreaded-gelistirme-channels-atomic-mutex/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/UKZMIhxMoT8&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Bu derste Rust dili üzerinde Atomic, Mutex ve Channel kullanarak birden fazla threadi nasıl senkronize olarak çalıştırabiliriz ele aldık.&lt;/p&gt;
+&lt;p&gt;İyi Seyirler.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;&#39;ta Multithreaded Geliştirme</title>
+      <link>http://localhost:1313/c&#43;&#43;-multithreaded-gelistirme-atomic-mutex/</link>
+      <category>C&#43;&#43;</category>
+      <category>Multithreaded</category>
+      <category>Atomic</category>
+      <category>Mutex</category><pubDate>Fri, 12 Nov 2021 12:00:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/c&#43;&#43;-multithreaded-gelistirme-atomic-mutex/</guid>
+      <description>&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube-nocookie.com/embed/wYhQZV9xp0E&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Bu derste C++ dili üzerinde Atomic ve Mutex kullanarak birden fazla threadi nasıl senkronize olarak çalıştırabiliriz ele aldık.&lt;/p&gt;
+&lt;p&gt;İyi seyirler.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

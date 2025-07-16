@@ -1,0 +1,17 @@
+name            = "Kaslaanka"
+license         = "GPL-v3"
+licenselink     = "https://github.com/Iossefy/kaslaanka/blob/master/LICENSE"
+description     = "kaslaanka is a minimalist theme for Hugo"
+homepage        = "https://github.com/Iossefy/kaslaanka"
+demosite	= "https://iossefy.github.io/kaslaanka"
+tags            = ["minimalist", "responsive", "typography", "customizable", "blog", "personal"]
+features        = ["Scriptless", "Responsive", "Minimal", "Clean", "Simple", "Minimalist", "Fast", "Customizable"]
+min_version     = "v0.147.1"
+
+[author]
+  name          = "Youssef Hesham"
+  homepage      = "https://youssefy.com"
+
+[original]
+  name          = "Nan Xiao"
+  homepage      = "https://nanx.me"

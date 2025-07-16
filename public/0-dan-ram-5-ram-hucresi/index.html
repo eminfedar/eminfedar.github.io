@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> 0 → RAM | 5) RAM Hücresi - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="http://localhost:1313/0-dan-ram-5-ram-hucresi/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="0 → RAM | 5) RAM Hücresi">
+  <meta property="og:description" content="Bir RAM yapmak için bir RAM Hücresini yapabilmeli.">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2020-03-06T11:00:03+00:00">
+    <meta property="article:modified_time" content="2020-03-06T11:00:03+00:00">
+    <meta property="article:tag" content="Ram">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="0 → RAM | 5) RAM Hücresi">
+    <meta name="twitter:description" content="Bir RAM yapmak için bir RAM Hücresini yapabilmeli.">
+    
+
+    <meta name="twitter:image" content="http://localhost:1313/">
+    <link rel="canonical" href="http://localhost:1313/0-dan-ram-5-ram-hucresi/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="http://localhost:1313/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							0 → RAM | 5) RAM Hücresi
+						</span>
+						
+						
+						
+						<span class="date middot meta-data" title='Fri Mar 6 2020 11:00:03 UTC'>
+							2020-03-06
+						</span>
+						<span class="reading-time middot meta-data">
+							4 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="http://localhost:1313/0-dan-ram-5-ram-hucresi/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="http://localhost:1313//tags/ram">
+								#RAM
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<h2 id="merhabalar">Merhabalar!</h2>
+<p>Bu yazımızda RAM’imizin iç devresini tasarlamaya başlayacağız. Atacağım devre dosyaları <a href="https://sourceforge.net/projects/circuit/"><strong>Logisim</strong></a> programından olacak. Tamamen sıfırdan kendi RAM’inizi inşa edip, simüle edip test edebileceksiniz :)</p>
+<h2 id="ramimiz-nasıl-bir-şey-olacak">RAM’imiz nasıl bir şey olacak?</h2>
+<p>RAM’imizin iç devresini tasarlamadan önce içi hazır bir eleman olarak düşünüp sadece giriş ve çıkışlarını tasarlayalım. <strong>Yani genel hatlarını belli edelim.</strong></p>
+<p>RAM’imiz <strong>2⁸x8</strong> boyutlarında olacak. Buradaki ilk değer RAM’in içindeki <strong>hücre</strong> sayısıdır. Yani 2⁸ tane <strong>çekmeceden</strong> oluşan bir dolap gibi düşünülebilir.</p>
+<p>İkinci değer (8) ise her çekmecenin içinde saklanan bit sayısıdır.</p>
+<p>Yani 2⁸=256 tane hücremiz var, her hücrede de 8 bit saklıyoruz.</p>
+<blockquote>
+<p>Dolayısıyla RAM’imiz <strong>2048</strong> adet <strong>0</strong> veya <strong>1</strong> saklıyor
+<strong>8 bit = 1 byte</strong> olduğundan <strong>256 Byte</strong>’lık bir RAM’imiz olacak.</p></blockquote>
+<p>Eğer 1GB’lık bir RAM yapmak isteseydik:</p>
+<p><strong>1GB için 2³⁰x8</strong><br>
+<strong>2GB için 2³¹x8</strong><br>
+<strong>4GB için 2³²x8</strong>
+bir RAM tasarlayacaktık.</p>
+<p>32 bit işlemcilerin olduğu sistemlere 4GB’dan fazla RAM <strong>takılamamasının</strong> sebebi en fazla <strong>2 üzeri 32&rsquo;ye</strong> kadar adres tutabilmesidir. Yani 2³²’den ekstra 1 tanecik fazla da olsa hücreyi adresleyemez, veriyi saklayamaz, tanımlayamaz, saklaması için 33. yeni bir bite ihtiyacı var.</p>
+<p>64 bit sistemler ise 2⁶⁴ yani <strong>“18 446 744 073 709 551 616 Byte”</strong> hafızaya sahip olacak kadar adresleme yapabilir, bu da yaklaşık <strong>“17 179 869 184 GB”</strong> yapıyor :) <em>(4GB’ye göre gerçekten yüksek bir rakam)</em></p>
+<blockquote>
+<p>Yani 64 bit işlemciye sahip bir bilgisayarınız varsa 17 Milyar GB RAM’e kadar yükseltme yapabilirsiniz (tabi gerçek hayatta adres tutmak için 64 bitin hepsi ayrılmaz :))</p></blockquote>
+<h2 id="ram-çipimizin-genel-tasarımı">RAM Çipimizin Genel Tasarımı</h2>
+<p><img src="images/ram/ram-component.png" alt="RAM Çipimizin Genel Tasarımı."></p>
+<p><em>RAM Çipimizin Genel Tasarımı.</em></p>
+<p><strong>Y:</strong> Yüksek Değerlikli Bit (<strong>2⁷</strong>)<br>
+<strong>D:</strong> Düşük Değerlikli Bit (<strong>2⁰</strong>)<br>
+<strong>CS (Chip Select):</strong> RAM çipimizi aktif eden giriş.<br>
+<strong>R’/W:</strong> Okuma yapmak için <strong>0 (R’)</strong> Yazma yapmak için <strong>1 (W)</strong> değeri verilmesi gereken girişimiz.</p>
+<p>&ndash;</p>
+<p>Çipimiz tamam, peki işlemci ile veri alışverişini nasıl sağlayacak? Çıkışları direk işlemciye mi bağlayacağız? Eğer öyle ise her yaptığımız eleman için işlemcide ayrı ayrı çıkışların mı olması gerek?</p>
+<h2 id="veri-aktarım-yöntemi">Veri Aktarım Yöntemi</h2>
+<p>Normal şartlarda iki şekilde bir çipi başka bir çip ile haberleştirebilirsiniz:</p>
+<p><strong>1.</strong> Direkt olarak birinin <strong>çıkışlarını</strong> diğerinin <strong>girişlerine</strong> bağlarsınız</p>
+<p><strong>2.</strong> İki veya daha fazla çipi ortak bir tane veri yoluna bağlayıp, <strong>Çip Seçim</strong> girişleri ile sadece konuşturmak istediğiniz çipleri aktif ederek veri aktarımını sağlarsınız.</p>
+<p><em>(Örneğin SSD’den veri okuyacağım, o zaman SSD’yi aktif edip diğerlerini pasif halde tutarım. Veya RAM’den veri okumak istiyorum, diğerlerini pasif hale getirip bu sefer de sadece RAM’i aktif ederim)</em></p>
+<p><img src="images/ram/ortak-veri-yolu.gif" alt="Ortak veri yolu kullanan çiplerin Chip Select girişi kullanılarak veri yoluna bağlanması.">
+<br><em>Ortak veri yolu kullanan çiplerin Chip Select girişi kullanılarak veri yoluna bağlanması.</em></p>
+<h2 id="gelelim-artık-ram-hücresine">Gelelim artık RAM Hücresine!</h2>
+<p>Güzel bir söz var:</p>
+<blockquote>
+<p><strong>&ldquo;Baharı icad etmeyen, bir elmayı icad edemez. Zira o elma, o tezgâhta dokunuyor. Bir elmayı icad eden, bir baharı icad edebilir…&rdquo;</strong></p></blockquote>
+<p>Bunun RAM ile alakası ise;</p>
+<blockquote>
+<p>Milyarlarca biti saklayabilmek için önce 1 biti saklayabilmek gerek,
+1 biti saklayamayan milyarları saklayamaz.
+Milyarları saklayabilen 1 biti saklayabilendir.</p></blockquote>
+<p>Yani önce <strong>tek bir biti saklayabilen</strong> bir <strong>“RAM Hücresi”</strong> yapıp sonra bunu istediğimiz sayıda kopyalarak istediğimiz boyutta RAM elde edeceğiz.</p>
+<p><img src="images/ram/ram-hucresi.gif" alt="Ramimize 1 bitlik veri saklama işini gerçekleştirecek temel RAM Hücresi. İç planı ve dışarıya soyutlanmış halleri.">
+<br> <em>Ramimize 1 bitlik veri saklama işini gerçekleştirecek temel RAM Hücresi. İç planı ve dışarıya soyutlanmış halleri.</em></p>
+<p>Hücremizin içinde kullandığımız devrede ilginç bir eleman görebilirsiniz. <em>(D Q ve CLK yazan)</em></p>
+<p>Bu eleman ilk derste gösterdiğim <strong>AND-OR-LATCHE</strong> yani Ve-Veya Mandalı’nın birazcık daha değişik hali.</p>
+<blockquote>
+<p>Ve-Veya mandalı <strong>SET</strong> kısmına 1 verilince verimiz <strong>1</strong>
+<strong>Reset</strong> kısmına 1 verilince verimiz <strong>0</strong> oluyordu.</p></blockquote>
+<p>Biz ise Set-Reset mantığı yerine,<strong>hangi veriyi verirsek onu saklayan</strong> bir mandal <em>( veya daha gelişmişi: Flip/Flop )</em> istiyoruz.</p>
+<p><strong>D-Tipi</strong> Flip Floplar da bu görevi gerçekleştiriyor.</p>
+<p>Merak etmeyin, baştaki mandalımıza <strong>2 VE</strong> ve <strong>1 Değil</strong> kapısı ekleyerek D-Tipi F/F elde edebiliriz.</p>
+<p>Logisim programında tasarladığım çalışan bir D-Tipi F/F’nin görüntüsü şu şekilde: <em>(yani RAM hücremizin içindeki D Q ve CLK yazan devre elemanının içi)</em></p>
+<p><img src="images/ram/mandal-logisim.png" alt="D-Tipi F/F iç devresi"> <br>
+<a href="https://shorturl.at/kyDOY">Logisim programında çalışan bir D tipi F/F devre dosyası</a></p>
+<blockquote>
+<p>Kırmızı çizgi ile ayırdığım kısmın sağında kalan parçalar ilk dersimizdeki <strong>Ve-Veya</strong> mandalı. Ek olarak sadece soldaki <strong>2 tane VE, 1 tane Değil</strong> kapılarını ekledik.</p></blockquote>
+<p><strong>Bu bağlantıları neye göre yapacağımızı</strong> ve hangi kapıları ekleyeceğimizi D-Tipi F/F’lerin doğruluk tablosunu çizerek kendiniz de elde edebilirsiniz. <em>(ipucu olarak Data ve CLK girişlerine karşılık Set ve Reset çıkışlarının durumları tablosunu kullanarak devreyi elde edebilirsiniz.)</em></p>
+<h2 id="ram-hücremiz-tamam-hadi-şimdi-bununla-bir-ram-yapalım">RAM Hücremiz tamam. Hadi şimdi bununla bir RAM yapalım!</h2>
+<p>Bu yazı hem biraz uzun oldu, hem de RAM’in direkt olarak iç dizaynını ayrı bir yazıda ele almak amacıyla <em>(tüm her şey tek bir yazıda toplanıp çorba gibi olmasın, ayrı ayrı düzenli olsun)</em> en iyisi bir sonraki yazıya bırakalım :)</p>
+<p>Serimizin son yazısı olacağını tahmin ettiğim <a href="0-dan-ram-6-ve-ram">0 → RAM | 6) Ve RAM!</a> Yazımızda görüşmek üzere.</p>
+<p>Esenlikler ve mutluluklar içinde kalınız.<br>
+Selamün aleyküm.</p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="http://localhost:1313/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

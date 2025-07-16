@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="tr-tr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> 0 → RAM | 6) Ve RAM! - Emin Fedar | Kişisel Blog </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="og:url" content="https://eminfedar.github.io/blog/ram/6-ve-ram/">
+  <meta property="og:site_name" content="Emin Fedar | Kişisel Blog">
+  <meta property="og:title" content="0 → RAM | 6) Ve RAM!">
+  <meta property="og:description" content="Merhabalar! Bu yazımızda RAM’imizi tasarlamayı bitiriyoruz.
+Az kalorili ve rastgele erişteli belleğimiz yemeye hazır efendim.
+RAM’imizin içini adım adım tasarlayalım: Adres girişlerinden aldığımız sayıyı 4. Yazıda ele aldığımız Kod Çözücüleri kullanarak iki boyutlu Ram Hücreleri matrisi hazırlayalım.
+Bu matrisin içine hücrelerimizi yerleştirip hücrenin “EN”(aktif etme) ucunu iki kod çözücüden gelen seçim uçlarına “VE” kapısı ile bağlayacağız. (Mesela 0. satır ve 4. sütun seçim uçları aktif ise (0, 4)’teki hücreyi aktif et)">
+  <meta property="og:locale" content="tr_tr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-03-07T12:00:03+00:00">
+    <meta property="article:modified_time" content="2020-03-07T12:00:03+00:00">
+    <meta property="article:tag" content="ram">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="twitter:title" content="0 → RAM | 6) Ve RAM!">
+    <meta name="twitter:description" content="">
+    
+
+    <meta name="twitter:image" content="https://eminfedar.github.io//images/ram/kapak-ve-ram.png">
+    <link rel="canonical" href="https://eminfedar.github.io/blog/ram/6-ve-ram/">
+    
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="https://eminfedar.github.io/css/custom.css">
+
+    </head>
+
+  <body>
+    
+<div class="mt-xl header">
+	<header>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<a href="https://eminfedar.github.io/" style="display: contents">
+						<h1 class="name text-center">eminfedar</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+<hr />
+<div class="content">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-lg-8">
+				
+				<img width="100%" style="border-radius:11pt; box-shadow: 0 0 11pt lightgray;"
+					src="/images/ram/kapak-ve-ram.png" />
+				<br>
+				
+
+				<div>
+					<img class="d-inline"
+						style="border: 1px solid gray; border-radius:100%; display:inline; vertical-align: middle; margin: 0; margin-right:7pt;"
+						width=72 src="/profile.png" />
+
+					<div style="display:inline-block; vertical-align: middle;">
+						<span class="blog-post-title">
+							0 → RAM | 6) Ve RAM!
+						</span>
+						
+						
+						<br>
+						<span class="meta-data" title="Emin Fedar">
+							Emin Fedar
+						</span>
+
+						
+						
+						<span class="date middot meta-data" title='Sat Mar 7 2020 12:00:03 UTC'>
+							2020/03/07
+						</span>
+						<span class="reading-time middot meta-data">
+							3 min read
+						</span>
+						
+						
+
+						<a class="middot meta-data" href="https://eminfedar.github.io/blog/ram/6-ve-ram/">Permalink</a>
+
+						<span class="middot"></span>
+
+						
+						<li class="d-inline" style="margin-left: 0.2rem;">
+							<a href="https://eminfedar.github.io//tags/ram">
+								#ram
+							</a>
+						</li>
+						
+
+
+					</div>
+				</div>
+
+				<div>
+
+				</div>
+
+				<hr />
+
+				<div class="markdown blog-post-content">
+					<h2 id="merhabalar">Merhabalar!</h2>
+<p>Bu yazımızda RAM’imizi tasarlamayı bitiriyoruz.</p>
+<p><img src="/images/ram/emmi-ram.jpg" alt="Az kalorili ve rastgele erişteli belleğimiz yemeye hazır efenim."> <br><em>Az kalorili ve rastgele erişteli belleğimiz yemeye hazır efendim.</em></p>
+<h2 id="ramimizin-içini-adım-adım-tasarlayalım">RAM’imizin içini adım adım tasarlayalım:</h2>
+<ol>
+<li>
+<p>Adres girişlerinden aldığımız sayıyı 4. Yazıda ele aldığımız <a href="0-dan-ram-4-kod-cozuculer">Kod Çözücüleri</a> kullanarak iki boyutlu <a href="0-dan-ram-5-ram-hucresi">Ram Hücreleri</a> matrisi hazırlayalım.</p>
+</li>
+<li>
+<p>Bu matrisin içine hücrelerimizi yerleştirip hücrenin “<strong>EN</strong>”<em>(aktif etme)</em> ucunu iki kod çözücüden gelen seçim uçlarına “<strong>VE</strong>” kapısı ile bağlayacağız. <em>(Mesela <strong>0. satır</strong> ve <strong>4. sütun</strong> seçim uçları <strong>aktif ise</strong> (0, 4)&rsquo;teki hücreyi aktif et)</em></p>
+</li>
+<li>
+<p>RAM’e erişimin okumak için mi yazmak için mi olduğunu öğrendiğimiz <strong>R/W’</strong> girişini bütün <strong>hücrelerin R/W</strong>’ girişlerine <strong>teker teker</strong> bağlayacağız.</p>
+</li>
+<li>
+<p>Seçtiğimiz RAM hücresinden veriyi okuyacağımız veya yazacağımız pin olan <strong>I/O</strong> (Giriş/Çıkış) pinini de bütün <strong>hücrelerin I/O</strong> girişine bağlayacağız.</p>
+</li>
+<li>
+<p>Chip Select girişini ise direkt olarak bütün girişlerle VE kapılayabiliriz ama bu biraz uzun ve gereksiz bir uğraş olur gibi.
+Onun yerine; eğer gerçekten yapacak olsaydık, decoder gibi komponentlerimizin VCC ve GND uçları olacağından sadece VCC uçlarını VE kapılayabilirdik. <em>(yani çipe elektriği verip vermeme şeklinde bir anahtarlama olabilir.)</em>
+<em>(O yüzden CS pini görselde bir yere bağlı değil :))</em></p>
+</li>
+</ol>
+<p><img src="/images/ram/ram-ic-gorunum.png" alt="4000x4000 çözünürlüğe sahip RAMcik içi.">
+<br><em>4000x4000 çözünürlüğe sahip RAMcik içi.</em></p>
+<p>Bütün bunları sırasıyla yaptığımızda karşımızda RAM’imiz için 8 tanesini yan yana getireceğimiz 256 boyutunda 1 bit saklayabilen **“RAMcik”**leri elde ederiz :).</p>
+<p>(😲)</p>
+<div style="width: 100%; height: 0px; position: relative; padding-bottom: 100.000%;"><iframe src="https://streamable.com/s/xwc8s/nrcvlh" frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe></div>
+<p><a href="https://streamable.com/xwc8s">&gt; HD Video</a></p>
+<p>Şema olarak RAM’imizden tek farkı veri çıkışında sadece 1 tane pin olması. <em>(Çünkü 256 farklı adres için sadece 1 bit saklayan hücrelerden oluşuyor)</em></p>
+<p>Bu 256 farklı adreste 1 bit saklayan “RAMcik”lerimizden 8 tane yan yana getirip, veri çıkışlarını da yüksek önemli bitten düşük önemli bite göre bağlayıp CS ve R’/W uçlarını da RAM’in CS ve R’/W uçlarına bağlar isek, 256x8&rsquo;lik bir RAM yapmış oluruz.</p>
+<p><img src="/images/ram/ram-bitmis.gif" alt="Ve RAM!"></p>
+<h2 id="ve-ram">Ve RAM!</h2>
+<p>Tebrikler!</p>
+<p>6 yazılık bu bloğu okuyup anlayarak kendi RAM’inizi sıfırdan tasarlamayı öğrendiniz. <em>(her yiğidin harcı değil )</em></p>
+<p><img src="/images/ram/congrats.jpg" alt="Tebrikler!"><br><em>Tebrikler!</em></p>
+<blockquote>
+<p>Eğer babanızdan kalma fabrika zincirleriniz varsa veya milyoner bir iş adamıysanız bu bilgiler üzerine biraz daha koyarak (256 Byte yetmez şimdi tabi, bunu nano seviyede küçültüp 8GB yi sığdırmanız lazım oraya :)) gerçek ve elle tutulur bir RAM yapıp ülkeye güzel bir ihracat geliri getirebilirsiniz :)</p></blockquote>
+<p>Veya kişisel çaplı projelerde kullanılmak üzere (mesela bir arduino projesi) modül olarak takılabilir bir RAM yapıp insanlara sunabilirsiniz. <em>(veya satabilirsiniz :))</em></p>
+<blockquote>
+<p>Tabi bu işin de kendince standartları var, bizim yaptığımız RAM tamamen kendi standartlarımız ve tercihlerimize dayalı oldu.</p></blockquote>
+<h2 id="bundan-sonra">Bundan Sonra</h2>
+<p>Daha da derinlere inip bu işin ehli olmak isterseniz inceleyebileceğiniz birkaç wikipedia linki ekleyelim:</p>
+<p>RAM çeşitleri olarak <a href="https://www.wikiwand.com/en/images_random-access_memory">SRAM</a>, <a href="https://www.wikiwand.com/en/Dynamic_random-access_memory">DRAM</a>.
+<em>(RAM var RAM var, hepsi aynı değil tabi)</em></p>
+<p>İşlemci ile RAM’in arasındaki iletişim standartları olarak ise<a href="https://www.wikiwand.com/en/Double_data_rate"> SDR, DDR, QDR</a> gibi konulara bakabilirsiniz.
+<em>(Gözünüz korkmasın, bunlar sadece belirli standartlar, çok farklı ve gelişmiş şeyler değil, buraya kadar geldiyseniz bunları da kolayca anlayabilirsiniz.)</em></p>
+<p>Günleriniz ve ömrünüz bol bereketli ve hayırlı olsun.
+<br> <strong>İyi günler.</strong></p>
+
+
+				</div>
+				
+			</div>
+			<hr class="footer-linebreak">
+<div class="container">
+  <span class="row justify-content-center meta" id="footer">
+    Copyright © 2025 Emin Fedar
+  </span>
+  <script defer src="https://eminfedar.github.io/js/custom.js"></script>
+
+</div>
+		</div>
+	</div>
+</div>
+
+  </body>
+
+</html>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>rams on Emin Fedar | Kişisel Blog</title>
+    <link>http://localhost:1313/ram/</link>
+    <description>Recent content in rams on Emin Fedar | Kişisel Blog</description>
+    
+    <language>tr-tr</language>
+    <lastBuildDate>Sat, 07 Mar 2020 12:00:03 +0000</lastBuildDate><atom:link href="http://localhost:1313/ram/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0 → RAM | 6) Ve RAM!</title>
+      <link>http://localhost:1313/ram/6-ve-ram/</link>
+      <category>ram</category><pubDate>Sat, 07 Mar 2020 12:00:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ram/6-ve-ram/</guid>
+      <description>&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;Bu yazımızda RAM’imizi tasarlamayı bitiriyoruz.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ram/emmi-ram.jpg&#34; alt=&#34;Az kalorili ve rastgele erişteli belleğimiz yemeye hazır efenim.&#34;&gt; &lt;br&gt;&lt;em&gt;Az kalorili ve rastgele erişteli belleğimiz yemeye hazır efendim.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ramimizin-içini-adım-adım-tasarlayalım&#34;&gt;RAM’imizin içini adım adım tasarlayalım:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Adres girişlerinden aldığımız sayıyı 4. Yazıda ele aldığımız &lt;a href=&#34;0-dan-ram-4-kod-cozuculer&#34;&gt;Kod Çözücüleri&lt;/a&gt; kullanarak iki boyutlu &lt;a href=&#34;0-dan-ram-5-ram-hucresi&#34;&gt;Ram Hücreleri&lt;/a&gt; matrisi hazırlayalım.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bu matrisin içine hücrelerimizi yerleştirip hücrenin “&lt;strong&gt;EN&lt;/strong&gt;”&lt;em&gt;(aktif etme)&lt;/em&gt; ucunu iki kod çözücüden gelen seçim uçlarına “&lt;strong&gt;VE&lt;/strong&gt;” kapısı ile bağlayacağız. &lt;em&gt;(Mesela &lt;strong&gt;0. satır&lt;/strong&gt; ve &lt;strong&gt;4. sütun&lt;/strong&gt; seçim uçları &lt;strong&gt;aktif ise&lt;/strong&gt; (0, 4)&amp;rsquo;teki hücreyi aktif et)&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>0 → RAM | 5) RAM Hücresi</title>
+      <link>http://localhost:1313/ram/5-ram-hucresi/</link>
+      <category>ram</category><pubDate>Fri, 06 Mar 2020 11:00:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ram/5-ram-hucresi/</guid>
+      <description>&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;Bu yazımızda RAM’imizin iç devresini tasarlamaya başlayacağız. Atacağım devre dosyaları &lt;a href=&#34;https://sourceforge.net/projects/circuit/&#34;&gt;&lt;strong&gt;Logisim&lt;/strong&gt;&lt;/a&gt; programından olacak. Tamamen sıfırdan kendi RAM’inizi inşa edip, simüle edip test edebileceksiniz :)&lt;/p&gt;
+&lt;h2 id=&#34;ramimiz-nasıl-bir-şey-olacak&#34;&gt;RAM’imiz nasıl bir şey olacak?&lt;/h2&gt;
+&lt;p&gt;RAM’imizin iç devresini tasarlamadan önce içi hazır bir eleman olarak düşünüp sadece giriş ve çıkışlarını tasarlayalım. &lt;strong&gt;Yani genel hatlarını belli edelim.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RAM’imiz &lt;strong&gt;2⁸x8&lt;/strong&gt; boyutlarında olacak. Buradaki ilk değer RAM’in içindeki &lt;strong&gt;hücre&lt;/strong&gt; sayısıdır. Yani 2⁸ tane &lt;strong&gt;çekmeceden&lt;/strong&gt; oluşan bir dolap gibi düşünülebilir.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>0 → RAM | 4) Kod Çözücüler</title>
+      <link>http://localhost:1313/ram/4-kod-cozuculer/</link>
+      <category>RAM</category><pubDate>Thu, 05 Mar 2020 10:57:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ram/4-kod-cozuculer/</guid>
+      <description>&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;Bu yazımızda RAM’imizin içindeki belirli adreslere erişmek için devremizde kullanacağımız &lt;strong&gt;Kod Çözücüleri&lt;/strong&gt; ve &lt;strong&gt;Kodlayıcıları&lt;/strong&gt; ele alacağız.&lt;/p&gt;
+&lt;h2 id=&#34;kod-çözücüler-ne-işe-yarar&#34;&gt;Kod Çözücüler ne işe yarar?&lt;/h2&gt;
+&lt;p&gt;Bir Kod Çözücü kısaca: &lt;strong&gt;seçim elemanıdır.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Girişlerine ikilik tabanda verilen girdiye göre sadece bir çıkışını aktif eder. Örneğin &lt;strong&gt;2 girişli&lt;/strong&gt; ve &lt;strong&gt;4 çıkışlı&lt;/strong&gt; (2x4) bir Kod Çözücü aşağıdaki gibi çalışır:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;00 -&amp;gt; &lt;strong&gt;0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;01 -&amp;gt; &lt;strong&gt;1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;10 -&amp;gt; &lt;strong&gt;2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;11 -&amp;gt; &lt;strong&gt;3&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ram/decoder-animasyon.gif&#34; alt=&#34;2 Giriş, 4 Çıkışlı bir kod çözücünün çalışma şekli.&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>0 → RAM | 3) Karnaugh Haritaları</title>
+      <link>http://localhost:1313/ram/3-karnaugh-haritalari/</link>
+      <category>ram</category><pubDate>Wed, 04 Mar 2020 09:00:03 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ram/3-karnaugh-haritalari/</guid>
+      <description>&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;Önceki derste &lt;strong&gt;Mantık Kapıları&lt;/strong&gt;na ve &lt;strong&gt;Doğruluk Tabloları&lt;/strong&gt;na giriş yapmıştık. Doğruluk Tabloları güzeldi fakat bir eksiği vardı ki; kapı sayısı arttıkça &lt;strong&gt;Doğruluk Tabloları&lt;/strong&gt;nın çekilemez uzunluklara ulaşması ve sadeleştirme işlemlerinin biraz daha zor görülmesiydi.&lt;/p&gt;
+&lt;p&gt;İşte bu sıkıntıları çekmemek için Maurice Karnaugh ve Edward Veitch’in güzel bir çalışması olan Karnaugh (Karnaugh-Veitch) Haritalarını kullanacağız.&lt;/p&gt;
+&lt;h2 id=&#34;karnaugh-haritaları-karnaugh-veitch-maps&#34;&gt;Karnaugh Haritaları (Karnaugh-Veitch Maps)&lt;/h2&gt;
+&lt;p&gt;Karnaugh Haritaları basitçe doğruluk tablosunun aşağıya doğru uzayan hali yerine &lt;strong&gt;iki boyutlu bir tablo&lt;/strong&gt; haline getirilmesinden ibaret. &lt;strong&gt;Fakat bize sağladığı kolaylıklar çok fazla. :)&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>0 → RAM | 2) Mantık Kapıları</title>
+      <link>http://localhost:1313/ram/2-mantik-kapilari/</link>
+      <category>ram</category><pubDate>Tue, 03 Mar 2020 19:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ram/2-mantik-kapilari/</guid>
+      <description>&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;Bu derste mantıksal elektronik devreleri kurmak için olmazsa olmazımız olan Mantık Kapılarına göz atacağız.&lt;/p&gt;
+&lt;h3 id=&#34;mantığın-kapısı-mı-olur&#34;&gt;Mantığın kapısı mı olur?&lt;/h3&gt;
+&lt;p&gt;Mantık ilmi, bizim günlük hayatta &lt;strong&gt;karar&lt;/strong&gt; verirken beynimiz ile yaptığımız işlemleri matematiğe uyarlayan bir ilim. Bu ilim pek çok devasa ilim dalının temellerini oluşturuyor.&lt;/p&gt;
+&lt;p&gt;Bugün bilgisayarda yaptığımız işlerin büyük çoğunluğu mantıksal çıkarımlar sayesinde olmakta.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mesela bu yazıyı beğenmek için beğen butonuna tıklamak. Bilgisayar sizin başka bir yere değil de özel olarak o butona tıkladığınızı nasıl anlar ki?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>0 → RAM | 1) RAM Nedir?</title>
+      <link>http://localhost:1313/ram/1-ram-nedir/</link>
+      <category>ram</category><pubDate>Mon, 02 Mar 2020 19:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/ram/1-ram-nedir/</guid>
+      <description>&lt;h2 id=&#34;merhabalar&#34;&gt;Merhabalar!&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;(0 → RAM)&lt;/strong&gt;* *serisinde sizlerle beraber &lt;strong&gt;sıfırdan&lt;/strong&gt; kendi &lt;strong&gt;RAM&lt;/strong&gt;’imizi tasarlayacağız. Bu yazıda tasarıma hemen geçmesek de genel bir bilgi edinmek için okumanız faydalı olacaktır. Başarılar!&lt;/p&gt;
+&lt;h3 id=&#34;ram-nedir&#34;&gt;Ram Nedir?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt;andom &lt;strong&gt;A&lt;/strong&gt;ccess &lt;strong&gt;M&lt;/strong&gt;emory, yani Rastgele Erişimli Bellek.&lt;/p&gt;
+&lt;p&gt;“Rastgele Erişimli” denilmesinin sebebi bellekteki hafıza bölümlerine “kaotik” veya “neresi rast gelirse” şeklinde erişmemiz değil.&lt;/p&gt;
+&lt;p&gt;İstediğimiz (yani herhangi bir, yani rastgele), hafıza bölümüne &lt;strong&gt;tek seferde&lt;/strong&gt; erişebildiğimiz için böyle tesmiye edilmiş.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ram/rastgele-vs-sirali.gif&#34; alt=&#34;Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]&#34;&gt;
+&lt;br&gt; &lt;em&gt;Bellekteki bir adrese erişim türü farkları [ Rastgele | Sıralı ]&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
