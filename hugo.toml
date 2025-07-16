@@ -1,0 +1,21 @@
+baseURL = 'https://eminfedar.github.io'
+languageCode = 'tr-tr'
+title = 'Emin Fedar | Kişisel Blog'
+theme = 'kaslaanka'
+
+capitalizeListTitles = false
+
+[params]
+brief_about = "<img width=128 src='profile.png'/> <center style='font-family:monospace;'>Rust, C++, Python, Linux, Pardus, GTK4, iced-rs, Slint, RISC-V</center>"
+sitename = "eminfedar"
+copyrights = "Emin Fedar"
+defaultList = "global"
+dateForm = "2006/01/02"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+
+[caches]
+[caches.images]
+dir = ':cacheDir/images'
